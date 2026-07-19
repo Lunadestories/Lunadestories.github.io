@@ -86,27 +86,54 @@
         </main>
     </div>
 
-    <!-- CÁC TRANG CHI TIẾT ẨN (Sẽ mở rộng ở các phần sau) -->
-    
-    <!-- Trang Học Tiếng Trung -->
+    <!-- Trang Học Tiếng Trung với HSK Flashcard Game -->
     <div id="chinese-view" class="page-view">
         <main class="main-content section-padding">
             <div class="card-header"><span class="flag">🇨🇳</span><h2>Chinese Space</h2></div>
-            <p class="card-desc">Nơi học tiếng Trung theo phong cách Notion chiết tự.</p>
+            <p class="card-desc">Học từ vựng HSK qua Flashcard tương tác thông minh.</p>
             
-            <div class="preview-box notion-style">
-                <div class="pinyin-item">
-                    <span class="hanzi">今天</span>
-                    <span class="pinyin">/ jīntiān /</span>
-                    <span class="meaning">Today</span>
+            <!-- HSK Flashcard Game Container -->
+            <div class="flashcard-wrapper">
+                <!-- Bộ lọc cấp độ HSK -->
+                <div class="hsk-filter">
+                    <button class="filter-btn active" data-level="1">HSK 1</button>
+                    <button class="filter-btn" data-level="2">HSK 2</button>
                 </div>
-                <div class="example-item">
-                    <p class="ex-cn">今天我去学校。</p>
-                    <p class="ex-vn">Hôm nay tôi đi học.</p>
+
+                <!-- Thanh tiến trình -->
+                <div class="progress-container-hsk">
+                    <div id="hsk-progress-bar" class="progress-bar-hsk" style="width: 20%"></div>
+                    <span id="hsk-progress-text">1 / 5 Từ</span>
                 </div>
-                <div class="notion-tip">
-                    <span class="tip-icon">💡</span>
-                    <p>Mẹo ghi nhớ: Chữ 今 (kim) nghĩa là hiện tại, kết hợp với 天 (thiên) là ngày. Ngày hiện tại chính là hôm nay!</p>
+
+                <!-- Thẻ Flashcard 3D có hiệu ứng lật -->
+                <div class="flashcard" id="main-flashcard">
+                    <div class="card-inner">
+                        <!-- Mặt trước: Chữ Hán to rõ ràng -->
+                        <div class="card-front">
+                            <span class="hsk-badge" id="card-badge">HSK 1</span>
+                            <h2 class="hsk-hanzi" id="card-hanzi">你好</h2>
+                            <p class="click-hint">Bấm vào thẻ để xem nghĩa</p>
+                        </div>
+                        <!-- Mặt sau: Phiên âm và giải nghĩa -->
+                        <div class="card-back">
+                            <div class="pinyin-box">
+                                <span class="hsk-pinyin" id="card-pinyin">/ nǐ hǎo /</span>
+                            </div>
+                            <h3 class="hsk-meaning" id="card-meaning">Xin chào</h3>
+                            <div class="hsk-example-box">
+                                <p class="ex-cn" id="card-ex-cn">你好！很高兴认识你。</p>
+                                <p class="ex-vn" id="card-ex-vn">Xin chào! Rất vui được gặp bạn.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nút điều hướng Game -->
+                <div class="flashcard-controls">
+                    <button id="prev-btn" class="ctrl-btn">← Trước</button>
+                    <button id="flip-btn" class="ctrl-btn primary">Lật thẻ ↻</button>
+                    <button id="next-btn" class="ctrl-btn">Tiếp theo →</button>
                 </div>
             </div>
         </main>
