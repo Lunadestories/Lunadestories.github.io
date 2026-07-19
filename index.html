@@ -1,931 +1,178 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🌙 LunaVerse - Learn Languages • Read Stories • Explore Life</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-    <style>
-        /* ========== CSS Variables & Theme System ========== */
-        :root {
-            /* Light Mode */
-            --bg-primary: #FFFFFF;
-            --bg-secondary: #F8FAFC;
-            --text-primary: #0F172A;
-            --text-secondary: #64748B;
-            --accent-primary: #2563EB;
-            --accent-highlight: #FACC15;
-            --border-color: #E2E8F0;
-            --border-muted: #CBD5E1;
-            
-            /* Typography */
-            --font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            --font-family-display: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            
-            /* Spacing & Sizing */
-            --spacing-xs: 0.5rem;
-            --spacing-sm: 1rem;
-            --spacing-md: 1.5rem;
-            --spacing-lg: 2rem;
-            --spacing-xl: 3rem;
-            --spacing-2xl: 4rem;
-            
-            /* Transitions */
-            --transition-fast: 150ms ease-in-out;
-            --transition-normal: 300ms ease-in-out;
-        }
-
-        body.dark-mode {
-            /* Dark Mode */
-            --bg-primary: #0F172A;
-            --bg-secondary: #1E293B;
-            --text-primary: #F8FAFC;
-            --text-secondary: #94A3B8;
-            --accent-primary: #2563EB;
-            --accent-highlight: #FACC15;
-            --border-color: #1E293B;
-            --border-muted: #334155;
-        }
-
-        /* ========== Global Styles ========== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: var(--font-family-sans);
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
-            transition: background-color var(--transition-normal), color var(--transition-normal);
-            line-height: 1.6;
-        }
-
-        /* ========== Typography ========== */
-        h1 {
-            font-family: var(--font-family-display);
-            font-size: clamp(2.5rem, 8vw, 4rem);
-            font-weight: 700;
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-        }
-
-        h2 {
-            font-family: var(--font-family-display);
-            font-size: clamp(1.875rem, 5vw, 2.5rem);
-            font-weight: 700;
-            line-height: 1.2;
-            letter-spacing: -0.01em;
-        }
-
-        h3 {
-            font-family: var(--font-family-display);
-            font-size: clamp(1.25rem, 3vw, 1.875rem);
-            font-weight: 600;
-        }
-
-        p {
-            font-size: clamp(0.95rem, 2vw, 1.1rem);
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
-
-        a {
-            color: var(--accent-primary);
-            text-decoration: none;
-            transition: opacity var(--transition-fast);
-        }
-
-        a:hover {
-            opacity: 0.8;
-        }
-
-        /* ========== Utility Classes ========== */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 var(--spacing-lg);
-        }
-
-        .container-sm {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 var(--spacing-lg);
-        }
-
-        /* ========== Header / Navigation ========== */
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(12px);
-            background-color: rgba(255, 255, 255, 0.8);
-            border-bottom: 1px solid var(--border-color);
-            transition: background-color var(--transition-normal);
-        }
-
-        body.dark-mode header {
-            background-color: rgba(15, 23, 42, 0.8);
-        }
-
-        .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: var(--spacing-sm) 0;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding-left: var(--spacing-lg);
-            padding-right: var(--spacing-lg);
-        }
-
-        .logo {
-            font-family: var(--font-family-display);
-            font-size: 1.5rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--text-primary);
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-lg);
-        }
-
-        .nav-link {
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: var(--text-primary);
-            position: relative;
-            transition: color var(--transition-fast);
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--accent-primary);
-            transition: width var(--transition-fast);
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .theme-toggle {
-            background: none;
-            border: 1px solid var(--border-muted);
-            width: 44px;
-            height: 44px;
-            border-radius: 8px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            transition: all var(--transition-fast);
-            color: var(--text-primary);
-        }
-
-        .theme-toggle:hover {
-            background-color: var(--bg-secondary);
-            border-color: var(--accent-primary);
-        }
-
-        @media (max-width: 768px) {
-            nav {
-                gap: var(--spacing-md);
-            }
-
-            .nav-link {
-                font-size: 0.85rem;
-            }
-        }
-
-        /* ========== Hero Section ========== */
-        .hero {
-            padding: var(--spacing-2xl) 0;
-            text-align: center;
-        }
-
-        .hero-content {
-            margin-top: var(--spacing-xl);
-        }
-
-        .hero-title {
-            margin-bottom: var(--spacing-md);
-            color: var(--text-primary);
-        }
-
-        .hero-subtitle {
-            font-size: clamp(1rem, 2.5vw, 1.25rem);
-            color: var(--text-secondary);
-            margin-bottom: var(--spacing-2xl);
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: var(--spacing-sm) var(--spacing-lg);
-            border: 1px solid var(--border-muted);
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            cursor: pointer;
-            transition: all var(--transition-normal);
-            text-decoration: none;
-        }
-
-        .btn-primary {
-            background-color: var(--accent-primary);
-            color: white;
-            border-color: var(--accent-primary);
-        }
-
-        .btn-primary:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(37, 99, 235, 0.2);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--text-primary);
-            border-color: var(--border-muted);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--bg-secondary);
-            border-color: var(--accent-primary);
-        }
-
-        /* ========== Quote Widget ========== */
-        .quote-widget {
-            margin: var(--spacing-2xl) 0;
-            padding: var(--spacing-lg);
-            border: 2px dashed var(--border-color);
-            border-radius: 12px;
-            background-color: var(--bg-secondary);
-            text-align: center;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .quote-text {
-            font-family: var(--font-family-display);
-            font-size: clamp(1.25rem, 3vw, 1.5rem);
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: var(--spacing-sm);
-            font-style: italic;
-        }
-
-        .quote-author {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        /* ========== Content Sections ========== */
-        section {
-            padding: var(--spacing-2xl) 0;
-            border-top: 1px solid var(--border-color);
-        }
-
-        section:first-of-type {
-            border-top: none;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: var(--spacing-2xl);
-            color: var(--text-primary);
-        }
-
-        /* ========== Chinese Section (Notion-style Card) ========== */
-        .chinese-card {
-            max-width: 700px;
-            margin: 0 auto var(--spacing-2xl);
-            padding: var(--spacing-lg);
-            background-color: var(--bg-secondary);
-            border-radius: 12px;
-            transition: all var(--transition-normal);
-        }
-
-        .chinese-card:hover {
-            background-color: var(--bg-secondary);
-        }
-
-        .hanzi {
-            font-family: var(--font-family-display);
-            font-size: clamp(3rem, 8vw, 5rem);
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: var(--spacing-md);
-            line-height: 1;
-        }
-
-        .pinyin {
-            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-            color: var(--accent-primary);
-            margin-bottom: var(--spacing-sm);
-            font-weight: 600;
-        }
-
-        .meaning {
-            font-size: clamp(1rem, 2vw, 1.2rem);
-            color: var(--text-secondary);
-            margin-bottom: var(--spacing-lg);
-        }
-
-        .usage-block {
-            padding: var(--spacing-md);
-            padding-left: var(--spacing-lg);
-            border-left: 4px solid var(--accent-primary);
-            background-color: var(--bg-primary);
-            border-radius: 4px;
-            margin-bottom: var(--spacing-md);
-            transition: all var(--transition-normal);
-        }
-
-        .usage-sentence {
-            font-size: clamp(0.95rem, 2vw, 1.1rem);
-            color: var(--text-primary);
-            margin-bottom: var(--spacing-sm);
-            font-weight: 500;
-        }
-
-        .usage-translation {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        .tip-callout {
-            padding: var(--spacing-md);
-            background-color: rgba(250, 204, 21, 0.1);
-            border-radius: 8px;
-            border-left: 4px solid var(--accent-highlight);
-            margin-top: var(--spacing-md);
-        }
-
-        .tip-label {
-            font-weight: 600;
-            color: var(--accent-highlight);
-            margin-bottom: var(--spacing-xs);
-            font-size: 0.9rem;
-        }
-
-        .tip-text {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        /* ========== Language Sections ========== */
-        .language-section {
-            max-width: 700px;
-            margin: 0 auto var(--spacing-2xl);
-        }
-
-        .language-title {
-            font-size: clamp(1.5rem, 3vw, 2rem);
-            margin-bottom: var(--spacing-lg);
-            color: var(--text-primary);
-        }
-
-        .language-tags {
-            display: flex;
-            gap: var(--spacing-md);
-            flex-wrap: wrap;
-            margin-bottom: var(--spacing-lg);
-        }
-
-        .language-tag {
-            padding: var(--spacing-sm) var(--spacing-md);
-            background-color: var(--bg-secondary);
-            border: 1px solid var(--border-muted);
-            border-radius: 8px;
-            font-weight: 500;
-            font-size: 0.9rem;
-            color: var(--text-primary);
-        }
-
-        .language-description {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            line-height: 1.8;
-        }
-
-        /* ========== Stories Section (E-reader style) ========== */
-        .stories-section {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .story-header-info {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: var(--spacing-lg);
-            padding-bottom: var(--spacing-md);
-            border-bottom: 1px solid var(--border-color);
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        .reading-metadata {
-            display: flex;
-            gap: var(--spacing-lg);
-        }
-
-        .progress-indicator {
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-xs);
-        }
-
-        .progress-bar {
-            width: 100px;
-            height: 3px;
-            background-color: var(--border-color);
-            border-radius: 2px;
-            overflow: hidden;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background-color: var(--accent-primary);
-            width: 40%;
-            transition: width var(--transition-normal);
-        }
-
-        .story-content {
-            font-size: clamp(1.05rem, 2.5vw, 1.25rem);
-            line-height: 1.9;
-            color: var(--text-primary);
-            margin-bottom: var(--spacing-xl);
-        }
-
-        .story-paragraph {
-            margin-bottom: var(--spacing-lg);
-        }
-
-        /* ========== Blog Section (Medium-style) ========== */
-        .blog-section {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .blog-article {
-            margin-bottom: var(--spacing-2xl);
-            padding-bottom: var(--spacing-2xl);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .blog-article:last-child {
-            border-bottom: none;
-        }
-
-        .blog-date {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .blog-title {
-            font-size: clamp(1.5rem, 3vw, 2rem);
-            margin-bottom: var(--spacing-md);
-            color: var(--text-primary);
-            line-height: 1.4;
-        }
-
-        .blog-excerpt {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            line-height: 1.8;
-            margin-bottom: var(--spacing-md);
-        }
-
-        .blog-readmore {
-            font-weight: 600;
-            font-size: 0.95rem;
-            display: inline-flex;
-            align-items: center;
-            gap: var(--spacing-xs);
-        }
-
-        /* ========== Footer ========== */
-        footer {
-            border-top: 1px solid var(--border-color);
-            padding: var(--spacing-2xl) 0;
-            margin-top: var(--spacing-2xl);
-        }
-
-        .footer-content {
-            text-align: center;
-            color: var(--text-secondary);
-        }
-
-        .footer-text {
-            font-size: 0.9rem;
-            line-height: 1.7;
-        }
-
-        /* ========== Responsive Design ========== */
-        @media (max-width: 768px) {
-            .container,
-            .container-sm {
-                padding: 0 var(--spacing-md);
-            }
-
-            section {
-                padding: var(--spacing-xl) 0;
-            }
-
-            .hero {
-                padding: var(--spacing-xl) 0;
-            }
-
-            .hero-title {
-                margin-bottom: var(--spacing-lg);
-            }
-
-            .hero-subtitle {
-                margin-bottom: var(--spacing-lg);
-            }
-
-            .language-tags {
-                gap: var(--spacing-sm);
-            }
-
-            .language-tag {
-                font-size: 0.85rem;
-                padding: 0.4rem 0.8rem;
-            }
-
-            .story-header-info {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: var(--spacing-sm);
-            }
-
-            .reading-metadata {
-                flex-direction: column;
-                gap: var(--spacing-sm);
-            }
-
-            header {
-                position: static;
-            }
-
-            .header-content {
-                flex-direction: column;
-                gap: var(--spacing-md);
-            }
-
-            nav {
-                width: 100%;
-                justify-content: space-between;
-                gap: var(--spacing-sm);
-            }
-
-            .nav-link {
-                font-size: 0.8rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.875rem;
-            }
-
-            h2 {
-                font-size: 1.25rem;
-            }
-
-            .container,
-            .container-sm {
-                padding: 0 var(--spacing-md);
-            }
-
-            .quote-widget {
-                padding: var(--spacing-md);
-            }
-
-            .quote-text {
-                font-size: 1.1rem;
-            }
-
-            .hanzi {
-                font-size: 2.5rem;
-            }
-
-            .btn {
-                padding: var(--spacing-sm) var(--spacing-md);
-                font-size: 0.85rem;
-            }
-
-            .story-content {
-                font-size: 1rem;
-            }
-
-            .blog-title {
-                font-size: 1.25rem;
-            }
-        }
-    </style>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- ========== Header / Navigation ========== -->
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <span>🌙 LunaVerse</span>
-            </div>
-            <nav>
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#languages" class="nav-link">Languages</a>
-                <a href="#stories" class="nav-link">Stories</a>
-                <a href="#blog" class="nav-link">Blog</a>
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">☀️</button>
-            </nav>
-        </div>
-    </header>
 
-    <!-- ========== Hero Section ========== -->
-    <section id="home" class="hero">
-        <div class="container-sm">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo" data-target="home-view">🌙 LunaVerse</a>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="#" class="nav-item active" data-target="home-view">Home</a></li>
+                    <li><a href="#" class="nav-item" data-target="chinese-view">Chinese</a></li>
+                    <li><a href="#" class="nav-item" data-target="german-view">German</a></li>
+                    <li><a href="#" class="nav-item" data-target="english-view">English</a></li>
+                    <li><a href="#" class="nav-item" data-target="stories-view">Stories</a></li>
+                    <li><a href="#" class="nav-item" data-target="blog-view">Blog</a></li>
+                </ul>
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle dark mode">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M16.243 17.657l.707.707M6.343 6.343l.707-.707M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" /></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- TRANG CHỦ (HOME VIEW) -->
+    <div id="home-view" class="page-view active">
+        <!-- Hero Section -->
+        <header class="hero">
             <div class="hero-content">
                 <h1 class="hero-title">🌙 LunaVerse</h1>
                 <p class="hero-subtitle">Learn Languages • Read Stories • Explore Life</p>
-                <a href="#languages" class="btn btn-primary">[ Explore ]</a>
+                <button class="btn-explore" data-target="chinese-view">Explore Now</button>
             </div>
-        </div>
-    </section>
+        </header>
 
-    <!-- ========== Quote Widget ========== -->
-    <section>
-        <div class="container-sm">
-            <div class="quote-widget">
-                <p class="quote-text" id="dailyQuote">"Learning another language is another way of becoming another person."</p>
-                <p class="quote-author" id="quoteAuthor">— Haruki Murakami</p>
+        <!-- Today's Quote Section -->
+        <section class="quote-section">
+            <div class="quote-container">
+                <span class="quote-tag">Today's Quote</span>
+                <p id="daily-quote" class="quote-text">"Learning another language is another way of becoming another person."</p>
+                <span id="quote-author" class="quote-author">— Haruki Murakami</span>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ========== Chinese Section ========== -->
-    <section id="languages">
-        <div class="container-sm">
-            <h2 class="section-title">Learn Chinese Today</h2>
+        <!-- Preview Grid -->
+        <main class="main-content">
+            <div class="sections-grid">
+                <!-- Preview Chinese -->
+                <section class="card-section preview-card" data-target="chinese-view">
+                    <div class="card-header"><span class="flag">🇨🇳</span><h2>Chinese</h2></div>
+                    <p class="card-desc">HSK • Chiết tự • Ngữ pháp</p>
+                </section>
+                <!-- Preview German -->
+                <section class="card-section preview-card" data-target="german-view">
+                    <div class="card-header"><span class="flag">🇩🇪</span><h2>German</h2></div>
+                    <p class="card-desc">A1 • A2 • B1</p>
+                </section>
+                <!-- Preview English -->
+                <section class="card-section preview-card" data-target="english-view">
+                    <div class="card-header"><span class="flag">🇬🇧</span><h2>English</h2></div>
+                    <p class="card-desc">Grammar • Vocabulary</p>
+                </section>
+                <!-- Preview Stories -->
+                <section class="card-section preview-card" data-target="stories-view">
+                    <div class="card-header"><span class="flag">📚</span><h2>Stories</h2></div>
+                    <p class="card-desc">Read & Enjoy</p>
+                </section>
+                <!-- Preview Blog -->
+                <section class="card-section preview-card full-width" data-target="blog-view">
+                    <div class="card-header"><span class="flag">🌍</span><h2>Luna's Journey</h2></div>
+                    <p class="card-desc">Blog & Reflections</p>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- CÁC TRANG CHI TIẾT ẨN (Sẽ mở rộng ở các phần sau) -->
+    
+    <!-- Trang Học Tiếng Trung -->
+    <div id="chinese-view" class="page-view">
+        <main class="main-content section-padding">
+            <div class="card-header"><span class="flag">🇨🇳</span><h2>Chinese Space</h2></div>
+            <p class="card-desc">Nơi học tiếng Trung theo phong cách Notion chiết tự.</p>
             
-            <div class="chinese-card">
-                <div class="hanzi">今天</div>
-                <div class="pinyin">/ jīntiān /</div>
-                <div class="meaning">Today</div>
-                
-                <div class="usage-block">
-                    <div class="usage-sentence">今天我去学校。</div>
-                    <div class="usage-translation">Today I go to school. (Hôm nay tôi đi học.)</div>
+            <div class="preview-box notion-style">
+                <div class="pinyin-item">
+                    <span class="hanzi">今天</span>
+                    <span class="pinyin">/ jīntiān /</span>
+                    <span class="meaning">Today</span>
                 </div>
-
-                <div class="tip-callout">
-                    <div class="tip-label">💡 Memory Tip</div>
-                    <div class="tip-text">今 (jīn) means "now" and 天 (tiān) means "sky/day." Together they represent "this day" or "today." Think of it as the sky (heaven) of the present moment.</div>
+                <div class="example-item">
+                    <p class="ex-cn">今天我去学校。</p>
+                    <p class="ex-vn">Hôm nay tôi đi học.</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== German Section ========== -->
-    <section>
-        <div class="container-sm">
-            <h2 class="section-title">German Language Levels</h2>
-            
-            <div class="language-section">
-                <h3 class="language-title">Deutsch</h3>
-                <div class="language-tags">
-                    <span class="language-tag">A1</span>
-                    <span class="language-tag">A2</span>
-                    <span class="language-tag">B1</span>
-                </div>
-                <p class="language-description">German is a fascinating language with complex grammar and rich vocabulary. Our curated lessons guide you through each proficiency level with real-world examples and cultural context.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== English Section ========== -->
-    <section>
-        <div class="container-sm">
-            <h2 class="section-title">English Mastery</h2>
-            
-            <div class="language-section">
-                <h3 class="language-title">English</h3>
-                <div class="language-tags">
-                    <span class="language-tag">Grammar</span>
-                    <span class="language-tag">Vocabulary</span>
-                    <span class="language-tag">Pronunciation</span>
-                </div>
-                <p class="language-description">Enhance your English proficiency through carefully selected articles, dialogues, and writing exercises. Learn not just the rules, but the nuances that make native speakers sound natural.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== Stories Section ========== -->
-    <section id="stories">
-        <div class="container-sm">
-            <h2 class="section-title">Stories & Articles</h2>
-            
-            <div class="stories-section">
-                <div class="story-header-info">
-                    <span>Autumn Whispers</span>
-                    <div class="reading-metadata">
-                        <span class="reading-time">5 min read</span>
-                        <div class="progress-indicator">
-                            <span>Progress:</span>
-                            <div class="progress-bar">
-                                <div class="progress-fill"></div>
-                            </div>
-                            <span>40%</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="story-content">
-                    <p class="story-paragraph">
-                        The leaves fell in a gentle cascade, each one a small farewell to the season. Outside my window, the world was painting itself in shades of amber and gold. I watched, mesmerized, as the wind orchestrated a silent symphony.
-                    </p>
-                    <p class="story-paragraph">
-                        There is something profoundly peaceful about autumn. It is the season that teaches us the beauty of letting go, of releasing what no longer serves us. The trees do not mourn their fallen leaves; they accept the cycle, knowing that renewal lies dormant beneath.
-                    </p>
-                    <p class="story-paragraph">
-                        I thought of the conversations I had yet to have, the stories left untold. Perhaps they too were like these leaves—meant to fall away naturally, to make space for something new. Perhaps acceptance was the greatest form of courage.
-                    </p>
+                <div class="notion-tip">
+                    <span class="tip-icon">💡</span>
+                    <p>Mẹo ghi nhớ: Chữ 今 (kim) nghĩa là hiện tại, kết hợp với 天 (thiên) là ngày. Ngày hiện tại chính là hôm nay!</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </main>
+    </div>
 
-    <!-- ========== Blog Section ========== -->
-    <section id="blog">
-        <div class="container-sm">
-            <h2 class="section-title">Blog & Thoughts</h2>
-            
-            <div class="blog-section">
-                <article class="blog-article">
-                    <p class="blog-date">19 July 2024</p>
-                    <h3 class="blog-title">The Quiet Power of Written Language</h3>
-                    <p class="blog-excerpt">In a world saturated with noise, writing remains one of the most intimate and powerful forms of communication. When we write, we slow down. We choose our words carefully. We create space for meaning to breathe.</p>
-                    <a href="#" class="blog-readmore">Read Article →</a>
-                </article>
-
-                <article class="blog-article">
-                    <p class="blog-date">14 July 2024</p>
-                    <h3 class="blog-title">Why Learning Languages Opens Doors to New Worlds</h3>
-                    <p class="blog-excerpt">Language is not merely a tool for communication—it is a gateway to understanding entirely different ways of thinking, feeling, and being. Each language carries with it the history, culture, and philosophy of its speakers.</p>
-                    <a href="#" class="blog-readmore">Read Article →</a>
-                </article>
-
-                <article class="blog-article">
-                    <p class="blog-date">8 July 2024</p>
-                    <h3 class="blog-title">Minimalism in Design and in Life</h3>
-                    <p class="blog-excerpt">There is profound beauty in simplicity. Minimalism is not about having less for the sake of emptiness—it is about intentionality. It is keeping only what matters and letting go of the rest.</p>
-                    <a href="#" class="blog-readmore">Read Article →</a>
-                </article>
+    <!-- Trang Học Tiếng Đức -->
+    <div id="german-view" class="page-view">
+        <main class="main-content section-padding">
+            <div class="card-header"><span class="flag">🇩🇪</span><h2>German Space</h2></div>
+            <p class="card-desc">Học tiếng Đức tối giản cho các cấp độ A1 • A2 • B1.</p>
+            <div class="preview-box notion-style">
+                <div class="pinyin-item">
+                    <span class="hanzi">Guten Tag</span>
+                    <span class="pinyin">/ ˈɡuːtn̩ ˈtaːk /</span>
+                    <span class="meaning">Hello / Good day</span>
+                </div>
             </div>
-        </div>
-    </section>
+        </main>
+    </div>
 
-    <!-- ========== Footer ========== -->
-    <footer>
-        <div class="container-sm">
-            <div class="footer-content">
-                <p class="footer-text">🌙 LunaVerse © 2024 • A space for language learning, stories, and mindful exploration.</p>
+    <!-- Trang Học Tiếng Anh -->
+    <div id="english-view" class="page-view">
+        <main class="main-content section-padding">
+            <div class="card-header"><span class="flag">🇬🇧</span><h2>English Space</h2></div>
+            <p class="card-desc">Làm chủ bản chất bản từ vựng và ngữ pháp tiếng Anh.</p>
+            <div class="preview-box notion-style">
+                <div class="pinyin-item">
+                    <span class="hanzi">Serendipity</span>
+                    <span class="pinyin">/ ˌserənˈdipədē /</span>
+                    <span class="meaning">Sự tình cờ may mắn</span>
+                </div>
             </div>
-        </div>
+        </main>
+    </div>
+
+    <!-- Thư Viện Truyện -->
+    <div id="stories-view" class="page-view">
+        <main class="main-content section-padding">
+            <div class="card-header"><span class="flag">📚</span><h2>Kindle Library</h2></div>
+            <p class="card-desc">Đọc sách phong cách Kindle tối giản.</p>
+            <div class="preview-box kindle-style">
+                <div class="kindle-meta"><span>5 min read</span><span>Progress: 40%</span></div>
+                <p class="kindle-text">Hoàng tử bé đứng trên tiểu hành tinh của mình, nhìn ngắm hoàng hôn buông xuống chầm chậm...</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Trang Blog -->
+    <div id="blog-view" class="page-view">
+        <main class="main-content section-padding">
+            <div class="card-header"><span class="flag">🌍</span><h2>Luna's Insights</h2></div>
+            <p class="card-desc">Góc nhỏ chiêm nghiệm cuộc sống và trải nghiệm tự học.</p>
+            <div class="preview-box medium-style">
+                <h3>Hành trình từ số 0 đến việc làm chủ các ngoại ngữ</h3>
+                <p>Học ngoại ngữ không phải là nhồi nhét sách giáo khoa, mà là cách chúng ta mở ra một lăng kính mới để nhìn thế giới...</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>A place to learn, read, relax and explore.</p>
+        <p class="copyright">© 2026 LunaVerse. Designed with minimalist aesthetics.</p>
     </footer>
 
-    <!-- ========== JavaScript ========== -->
-    <script>
-        // ========== Theme Toggle ========== 
-        const themeToggle = document.getElementById('themeToggle');
-        const htmlElement = document.documentElement;
-
-        // Check for saved theme preference or default to light mode
-        const currentTheme = localStorage.getItem('theme') || 'light';
-        if (currentTheme === 'dark') {
-            document.body.classList.add('dark-mode');
-            themeToggle.textContent = '🌙';
-        } else {
-            themeToggle.textContent = '☀️';
-        }
-
-        themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            
-            const isDarkMode = document.body.classList.contains('dark-mode');
-            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-            themeToggle.textContent = isDarkMode ? '🌙' : '☀️';
-        });
-
-        // ========== Daily Quote System ========== 
-        const quotes = [
-            {
-                text: "Learning another language is another way of becoming another person.",
-                author: "Haruki Murakami"
-            },
-            {
-                text: "Language is the key to understanding different worlds and perspectives.",
-                author: "Unknown"
-            },
-            {
-                text: "Words are, of course, the most powerful drug used by mankind.",
-                author: "Rudyard Kipling"
-            },
-            {
-                text: "To learn a language is to have one more window on the world.",
-                author: "Frank McCourt"
-            },
-            {
-                text: "The limits of my language mean the limits of my world.",
-                author: "Ludwig Wittgenstein"
-            }
-        ];
-
-        function displayDailyQuote() {
-            const today = new Date();
-            const dayOfMonth = today.getDate();
-            const quoteIndex = (dayOfMonth - 1) % quotes.length;
-            const selectedQuote = quotes[quoteIndex];
-
-            const quoteElement = document.getElementById('dailyQuote');
-            const authorElement = document.getElementById('quoteAuthor');
-
-            quoteElement.textContent = `"${selectedQuote.text}"`;
-            authorElement.textContent = `— ${selectedQuote.author}`;
-        }
-
-        // Display the daily quote on page load
-        displayDailyQuote();
-
-        // ========== Smooth Scroll Behavior Enhancement ========== 
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // ========== Highlight Active Navigation Link ========== 
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.nav-link');
-
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= sectionTop - 200) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').slice(1) === current) {
-                    link.style.color = 'var(--accent-primary)';
-                } else {
-                    link.style.color = 'var(--text-primary)';
-                }
-            });
-        });
-
-        // ========== Stagger Animation on Page Load ========== 
-        window.addEventListener('load', () => {
-            const sections = document.querySelectorAll('section');
-            sections.forEach((section, index) => {
-                section.style.opacity = '1';
-                section.style.animation = `none`;
-            });
-        });
-    </script>
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
