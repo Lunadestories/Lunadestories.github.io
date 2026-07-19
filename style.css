@@ -512,6 +512,177 @@ a:hover {
     line-height: var(--line-height-relaxed);
 }
 
+/* ========== HSK FLASHCARD GAME STYLES ========== */
+.flashcard-wrapper {
+    max-width: 500px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.hsk-filter {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-btn {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: var(--accent-primary);
+    color: white;
+    border-color: var(--accent-primary);
+}
+
+.progress-container-hsk {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 25px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.progress-bar-hsk {
+    height: 6px;
+    background: var(--accent-primary);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+    flex: 1;
+}
+
+/* Hiệu ứng 3D Flip Card */
+.flashcard {
+    height: 300px;
+    perspective: 1000px;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    box-shadow: var(--shadow-lg);
+    border-radius: 16px;
+}
+
+.flashcard.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 16px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    justify-content: space-around;
+}
+
+.hsk-badge {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    background: #EF4444;
+    color: white;
+    font-size: 0.75rem;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+.hsk-hanzi {
+    font-size: 3.5rem;
+    font-family: var(--font-family-display);
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.click-hint {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    position: absolute;
+    bottom: 15px;
+    margin: 0;
+}
+
+.hsk-pinyin {
+    color: var(--accent-primary);
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.hsk-meaning {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin: 10px 0;
+}
+
+.hsk-example-box {
+    border-left: 3px solid var(--border-color);
+    padding-left: 15px;
+    text-align: left;
+    width: 100%;
+}
+
+.ex-cn { font-weight: 500; margin-bottom: 4px; color: var(--text-primary); }
+.ex-vn { color: var(--text-secondary); font-size: 0.9rem; margin: 0; }
+
+.flashcard-controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.ctrl-btn {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.ctrl-btn.primary {
+    background: var(--text-primary);
+    color: var(--bg-primary);
+    border-color: var(--text-primary);
+}
+
+.ctrl-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
 /* ========== PAGE VIEW SYSTEM ========== */
 .page-view {
     display: none;
@@ -619,6 +790,14 @@ a:hover {
         flex-direction: column;
         gap: var(--spacing-sm);
     }
+
+    .hsk-hanzi {
+        font-size: 2.5rem;
+    }
+
+    .flashcard {
+        height: 250px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -708,6 +887,23 @@ a:hover {
 
     .footer {
         padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    .hsk-hanzi {
+        font-size: 2rem;
+    }
+
+    .flashcard {
+        height: 220px;
+    }
+
+    .ctrl-btn {
+        padding: 10px;
+        font-size: 0.85rem;
+    }
+
+    .flashcard-wrapper {
+        max-width: 100%;
     }
 }
 
