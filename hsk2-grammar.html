@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>十课语法 · Ngữ pháp HSK2 qua 10 bài</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4EFE1;
+  --paper-dim:#EAE3CE;
+  --ink:#1E2A32;
+  --ink-soft:#2A3841;
+  --jade:#2F6E52;
+  --jade-soft:#E4EEE7;
+  --indigo:#37507C;
+  --indigo-soft:#E6EAF2;
+  --seal:#A83C34;
+  --seal-soft:#F3E4E1;
+  --gold:#B98B3D;
+  --text:#2A2621;
+  --text-dim:#5B5347;
+  --line:#D8CFB4;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--text);
+  font-family:'Be Vietnam Pro',sans-serif;
+  font-size:16px;
+  line-height:1.6;
+}
+.hanzi, h1,h2,h3, .seal-badge, .lesson-title{font-family:'Noto Serif SC',serif;}
+.formula{font-family:'JetBrains Mono',monospace;}
+
+/* texture */
+body::before{
+  content:"";
+  position:fixed; inset:0;
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(184,139,61,0.05), transparent 40%),
+    radial-gradient(circle at 80% 90%, rgba(47,110,82,0.06), transparent 45%);
+  pointer-events:none; z-index:0;
+}
+
+/* ===== HERO ===== */
+.hero{
+  position:relative;
+  background:linear-gradient(180deg,var(--ink) 0%, #24333D 100%);
+  color:var(--paper);
+  padding:72px 24px 96px;
+  overflow:hidden;
+}
+.hero::after{
+  content:"";
+  position:absolute; right:-60px; top:-60px;
+  width:340px; height:340px; border-radius:50%;
+  border:2px solid rgba(244,239,225,0.08);
+}
+.hero::before{
+  content:"";
+  position:absolute; left:-40px; bottom:-90px;
+  width:260px; height:260px; border-radius:50%;
+  border:2px solid rgba(244,239,225,0.06);
+}
+.hero-inner{max-width:920px; margin:0 auto; position:relative; z-index:1;}
+.hero-eyebrow{
+  display:inline-flex; align-items:center; gap:10px;
+  font-size:13px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--gold); font-weight:600; margin-bottom:22px;
+}
+.hero-eyebrow .stroke{width:28px; height:1px; background:var(--gold);}
+.hero h1{
+  font-size:clamp(34px,5.4vw,56px);
+  line-height:1.15; margin:0 0 18px; font-weight:900;
+}
+.hero h1 .cn{color:var(--gold); display:block; font-size:0.62em; letter-spacing:.06em; margin-bottom:6px; font-weight:700;}
+.hero p.lead{
+  font-size:17px; color:#CBD3D6; max-width:560px; margin:0 0 30px;
+}
+.hero-stats{display:flex; gap:36px; flex-wrap:wrap;}
+.hero-stat b{display:block; font-size:26px; font-family:'Noto Serif SC',serif; color:var(--paper);}
+.hero-stat span{font-size:12.5px; color:#9DAAB0; letter-spacing:.04em;}
+
+/* ===== LAYOUT ===== */
+.layout{
+  max-width:1180px; margin:-52px auto 0; padding:0 24px 100px;
+  position:relative; z-index:2;
+  display:grid; grid-template-columns:220px 1fr; gap:32px;
+}
+@media (max-width:860px){ .layout{grid-template-columns:1fr;} .toc{position:static !important;} }
+
+.toc{
+  position:sticky; top:24px; align-self:start;
+  background:var(--paper); border:1px solid var(--line);
+  border-radius:14px; padding:18px 14px;
+  box-shadow:0 12px 30px -18px rgba(30,42,50,0.35);
+}
+.toc-title{font-size:11px; text-transform:uppercase; letter-spacing:.12em; color:var(--text-dim); font-weight:700; margin:0 0 12px 6px;}
+.toc a{
+  display:flex; align-items:center; gap:10px;
+  padding:7px 8px; border-radius:8px; text-decoration:none;
+  color:var(--text); font-size:13.5px; font-weight:500;
+}
+.toc a:hover{background:var(--paper-dim);}
+.toc .num{
+  width:22px; height:22px; border-radius:50%; flex:none;
+  background:var(--seal); color:var(--paper);
+  display:flex; align-items:center; justify-content:center;
+  font-size:11px; font-weight:700; font-family:'Noto Serif SC',serif;
+}
+
+/* ===== LESSON CARD ===== */
+.lesson{
+  background:var(--paper); border:1px solid var(--line); border-radius:18px;
+  padding:36px clamp(20px,3.4vw,44px); margin-bottom:34px;
+  box-shadow:0 18px 40px -28px rgba(30,42,50,0.4);
+  scroll-margin-top:20px;
+}
+.lesson-head{display:flex; align-items:flex-start; gap:18px; margin-bottom:8px;}
+.seal-badge{
+  flex:none; width:56px; height:56px; border-radius:10px;
+  background:var(--seal); color:var(--paper-dim);
+  display:flex; align-items:center; justify-content:center;
+  font-size:22px; font-weight:700; letter-spacing:1px;
+  box-shadow:0 6px 14px -6px rgba(168,60,52,0.6);
+  transform:rotate(-2deg);
+}
+.lesson-title .cn{display:block; font-size:22px; font-weight:700; color:var(--ink); margin-bottom:2px;}
+.lesson-title .vi{display:block; font-size:13px; color:var(--text-dim); font-weight:600; letter-spacing:.03em; text-transform:uppercase;}
+.lesson-divider{
+  height:1px; margin:22px 0 26px; border:none;
+  background:repeating-linear-gradient(90deg, var(--line) 0 6px, transparent 6px 11px);
+}
+
+/* ===== GRAMMAR POINT ===== */
+.point{margin-bottom:30px;}
+.point:last-of-type{margin-bottom:0;}
+.point-head{display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; margin-bottom:14px;}
+.point-head .pt-cn{font-size:19px; font-weight:700; color:var(--ink);}
+.point-head .pt-pin{font-size:13px; color:var(--gold); font-style:italic; font-weight:600;}
+
+.dims{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:14px;}
+@media (max-width:720px){ .dims{grid-template-columns:1fr;} }
+.dim{border-radius:10px; padding:14px 15px;}
+.dim.syn{background:var(--jade-soft); border-left:3px solid var(--jade);}
+.dim.sem{background:var(--indigo-soft); border-left:3px solid var(--indigo);}
+.dim.prag{background:var(--seal-soft); border-left:3px solid var(--seal);}
+.dim-label{font-size:10.5px; text-transform:uppercase; letter-spacing:.1em; font-weight:700; margin-bottom:6px;}
+.dim.syn .dim-label{color:var(--jade);}
+.dim.sem .dim-label{color:var(--indigo);}
+.dim.prag .dim-label{color:var(--seal);}
+.dim p{margin:0; font-size:13.6px; color:var(--ink-soft);}
+.formula-box{
+  display:inline-block; margin-top:8px; padding:3px 8px; border-radius:6px;
+  background:rgba(30,42,50,0.06); font-size:12.5px; color:var(--ink);
+}
+
+.examples{background:#fff; border:1px solid var(--line); border-radius:10px; padding:12px 16px;}
+.ex-line{display:flex; gap:10px; padding:6px 0; font-size:14px; align-items:baseline; flex-wrap:wrap;}
+.ex-line:not(:last-child){border-bottom:1px dashed var(--line);}
+.ex-cn{font-weight:700; color:var(--ink); min-width:150px;}
+.ex-pin{color:var(--gold); font-style:italic; font-size:12.5px;}
+.ex-vi{color:var(--text-dim);}
+
+/* ===== EXERCISES ===== */
+.exercises{
+  margin-top:8px; background:var(--paper-dim); border-radius:14px;
+  padding:24px clamp(16px,3vw,30px);
+}
+.exercises h4{
+  margin:0 0 4px; font-size:15px; color:var(--ink);
+  display:flex; align-items:center; gap:8px;
+}
+.exercises h4::before{content:"练"; font-family:'Noto Serif SC',serif; background:var(--gold); color:#fff; width:24px; height:24px; border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:13px;}
+.ex-sub{font-size:12px; color:var(--text-dim); margin:0 0 16px 32px;}
+.ex-item{margin:0 0 14px 32px; font-size:14px;}
+.ex-item .tag{
+  display:inline-block; font-size:10px; font-weight:700; text-transform:uppercase;
+  letter-spacing:.05em; color:#fff; background:var(--indigo);
+  padding:2px 7px; border-radius:5px; margin-right:8px; vertical-align:middle;
+}
+.ex-item .tag.ctx{background:var(--jade);}
+.ex-item .tag.col{background:var(--indigo);}
+.ex-item .tag.trans{background:var(--gold);}
+.ex-item .tag.open{background:var(--seal);}
+.ex-item .q{color:var(--ink-soft);}
+
+details.answers{margin:18px 0 0 32px;}
+details.answers summary{
+  cursor:pointer; list-style:none; display:inline-flex; align-items:center; gap:8px;
+  font-size:12.5px; font-weight:700; color:var(--seal); padding:8px 14px;
+  border:1.5px solid var(--seal); border-radius:20px; width:fit-content;
+  transition:background .15s ease;
+}
+details.answers summary::-webkit-details-marker{display:none;}
+details.answers summary:hover{background:var(--seal-soft);}
+details.answers summary::before{content:"▸"; transition:transform .15s ease;}
+details.answers[open] summary::before{transform:rotate(90deg);}
+details.answers[open] summary{background:var(--seal); color:#fff;}
+.ans-list{margin-top:12px; padding:14px 18px; background:#fff; border:1px dashed var(--seal); border-radius:10px;}
+.ans-list p{margin:0 0 8px; font-size:13.6px; color:var(--ink-soft);}
+.ans-list p:last-child{margin-bottom:0;}
+.ans-list b{color:var(--jade);}
+
+footer{text-align:center; padding:40px 24px 60px; color:var(--text-dim); font-size:12.5px;}
+footer .cn{font-family:'Noto Serif SC',serif; color:var(--ink); font-size:16px; display:block; margin-bottom:6px;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow"><span class="stroke"></span>HSK 2 · Sơ cấp trung</div>
+    <h1><span class="cn">语法十课 · 从句到用</span>十课语法：Cú pháp – Ngữ nghĩa – Ngữ dụng</h1>
+    <p class="lead">Phân tích 27 điểm ngữ pháp trọng tâm trải dài 10 bài học HSK2, mỗi điểm được soi chiếu qua ba bình diện — cấu trúc câu, tầng nghĩa, và cách dùng trong giao tiếp thực tế — kèm bộ bài tập đa dạng có đáp án.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><b>10</b><span>BÀI HỌC</span></div>
+      <div class="hero-stat"><b>27</b><span>ĐIỂM NGỮ PHÁP</span></div>
+      <div class="hero-stat"><b>3</b><span>BÌNH DIỆN PHÂN TÍCH</span></div>
+      <div class="hero-stat"><b>60+</b><span>BÀI TẬP CÓ ĐÁP ÁN</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="layout">
+  <nav class="toc" aria-label="Mục lục">
+    <p class="toc-title">Mục lục</p>
+    <a href="#bai1"><span class="num">1</span> 九月去北京旅游最好</a>
+    <a href="#bai2"><span class="num">2</span> 我每天六点起床</a>
+    <a href="#bai3"><span class="num">3</span> 左边那个红色的是我的</a>
+    <a href="#bai4"><span class="num">4</span> 这工作是他帮我介绍的</a>
+    <a href="#bai5"><span class="num">5</span> 就买这件吧</a>
+    <a href="#bai6"><span class="num">6</span> 你怎么不吃了</a>
+    <a href="#bai7"><span class="num">7</span> 你家离公司远吗</a>
+    <a href="#bai8"><span class="num">8</span> 让我想想再告诉你</a>
+    <a href="#bai9"><span class="num">9</span> 题太多，我没做完</a>
+    <a href="#bai10"><span class="num">10</span> 别找了，手机在桌子上呢</a>
+  </nav>
+
+  <main>
+
+  <!-- ================= BÀI 1 ================= -->
+  <section class="lesson" id="bai1">
+    <div class="lesson-head">
+      <div class="seal-badge">壹</div>
+      <div class="lesson-title">
+        <span class="cn">九月去北京旅游最好</span>
+        <span class="vi">Bài 1 · Đi Bắc Kinh du lịch vào tháng 9 là tốt nhất</span>
+      </div>
+    </div>
+    <hr class="lesson-divider">
+
+    <!-- point 1.1 -->
+    <div class="point">
+      <div class="point-head"><span class="pt-cn">要 — trợ động từ nguyện vọng</span><span class="pt-pin">yào</span></div>
+      <div class="dims">
+        <div class="dim syn"><div class="dim-label">Cú pháp</div><p>Chủ ngữ + 要 + Động từ (+Tân ngữ). Phủ định nguyện vọng dùng <b>不想</b>, không dùng 不要 (vì 不要 mang nghĩa cấm đoán).<span class="formula-box formula">S + 要 + V(+O)</span></p></div>
+        <div class="dim sem"><div class="dim-label">Ngữ nghĩa</div><p>Biểu thị ý muốn, nguyện vọng chủ quan của người nói về việc thực hiện một hành động trong tương lai gần.</p></div>
+        <div class="dim prag"><div class="dim-label">Ngữ dụng</div><p>Dùng để bày tỏ dự định, kế hoạch trong hội thoại hằng ngày; khi hỏi ý kiến dùng dạng "要不要+ V?" để giữ lịch sự, trung lập.</p></div>
+      </div>
+      <div class="examples">
+        <div class="ex-line"><span class="ex-cn">我要吃米饭。</span><span class="ex-pin">Wǒ yào chī mǐfàn.</span><span class="ex-vi">Tôi muốn ăn cơm.</span></div>
+        <div class="ex-line"><span class="ex-cn">他不想去。</span><span class="ex-pin">Tā bù xiǎng qù.</span><span class="ex-vi">Anh ấy không muốn đi.</span></div>
+      </div>
+    </div>
+
+    <!-- point 1.2 -->
+    <div class="point">
+      <div class="point-head"><span class="pt-cn">最 — phó từ chỉ mức độ cao nhất</span><span class="pt-pin">zuì</span></div>
+      <div class="dims">
+        <div class="dim syn"><div class="dim-label">Cú pháp</div><p>最 đứng trực tiếp trước tính từ hoặc động từ tâm lý (喜欢, 爱, 讨厌...).<span class="formula-box formula">最 + Adj / V(tâm lý)</span></p></div>
+        <div class="dim sem"><div class="dim-label">Ngữ nghĩa</div><p>Biểu thị vị trí hàng đầu, mức độ so sánh tuyệt đối trong một phạm vi so sánh ngầm định.</p></div>
+        <div class="dim prag"><div class="dim-label">Ngữ dụng</div><p>Dùng khi khẳng định, nhấn mạnh sở thích hoặc đánh giá cao nhất so với các lựa chọn khác mà cả hai bên hội thoại cùng hiểu ngầm.</p></div>
+      </div>
+      <div class="examples">
+        <div class="ex-line"><span class="ex-cn">我最喜欢吃米饭。</span><span class="ex-pin">Wǒ zuì xǐhuan chī mǐfàn.</span><span class="ex-vi">Tôi thích ăn cơm nhất.</span></div>
+        <div class="ex-line"><span class="ex-cn">九月去北京旅游最好。</span><span class="ex-pin">Jiǔyuè qù Běijīng lǚyóu zuì hǎo.</span><span class="ex-vi">Đi Bắc Kinh du lịch vào tháng 9 là tốt nhất.</span></div>
+      </div>
+    </div>
+
+    <!-- point 1.3 -->
+    <div class="point">
+      <div class="point-head"><span class="pt-cn">几 / 多 — số ước lượng</span><span class="pt-pin">jǐ / duō</span></div>
+      <div class="dims">
+        <div class="dim syn"><div class="dim-label">Cú pháp</div><p>几 + Lượng từ + N (số &lt;10). Số&lt;10: Số từ+Lượng từ+多+N. Số chục&gt;10: Số chục+多+Lượng từ+N.<span class="formula-box formula">三个多星期 / 十多个月</span></p></div>
+        <div class="dim sem"><div class="dim-label">Ngữ nghĩa</div><p>Biểu thị số lượng không chính xác, mang tính ước lượng, phỏng đoán quanh một con số.</p></div>
+        <div class="dim prag"><div class="dim-label">Ngữ dụng</div><p>几 thường dùng để hỏi số lượng còn chưa biết (dưới 10); 多 dùng khi đã biết khoảng số lượng nhưng muốn diễn đạt "hơn, trên".</p></div>
+      </div>
+      <div class="examples">
+        <div class="ex-line"><span class="ex-cn">几本书？</span><span class="ex-pin">jǐ běn shū?</span><span class="ex-vi">Mấy quyển sách?</span></div>
+        <div class="ex-line"><span class="ex-cn">三个多星期</span><span class="ex-pin">sān gè duō xīngqī</span><span class="ex-vi">Hơn 3 tuần</span></div>
+        <div class="ex-line"><span class="ex-cn">十多个月</span><span class="ex-pin">shí duō gè yuè</span><span class="ex-vi">Hơn 10 tháng</span></div>
+      </div>
+    </div>
+
+    <div class="exercises">
+      <h4>Bài tập Bài 1</h4>
+      <p class="ex-sub">Kết hợp: điền theo ngữ cảnh · biến đổi cấu trúc · giao tiếp mở</p>
+      <div class="ex-item"><span class="tag ctx">Ngữ cảnh</span><span class="q">1. A: 你周末＿＿＿去看电影吗？ B: 不，我＿＿＿在家休息。 (điền 要 hoặc 不想)</span></div>
+      <div class="ex-item"><span class="tag col">Collocation</span><span class="q">2. Ghép 最 với động từ tâm lý phù hợp để tạo câu đúng: 我 ___ 喜欢 / 最 喜欢 ___ 米饭 → sắp xếp: 我、最、喜欢、吃、米饭。</span></div>
+      <div class="ex-item"><span class="tag trans">Biến đổi</span><span class="q">3. Biến câu sau thành câu hỏi ước lượng dùng 几 hoặc 多: "他有八本书。" → ______________？</span></div>
+      <div class="ex-item"><span class="tag trans">Biến đổi</span><span class="q">4. Viết lại "hơn 20 tháng" bằng cấu trúc 多 đúng quy tắc số chục &gt;10: ______________</span></div>
+      <div class="ex-item"><span class="tag open">Giao tiếp mở</span><span class="q">5. Hỏi và trả lời với bạn cùng lớp: "你最喜欢什么时候去旅游？为什么？" (dùng cả 要 và 最 trong câu trả lời)</span></div>
+      <details class="answers"><summary>Xem đáp án</summary>
+        <div class="ans-list">
+          <p><b>1.</b> A: 你周末 <b>要</b> 去看电影吗？ B: 不，我 <b>不想</b> 去，我要在家休息。</p>
+          <p><b>2.</b> 我最喜欢吃米饭。</p>
+          <p><b>3.</b> 他有几本书？ (vì số lượng &lt;10 và người hỏi chưa biết chính xác nên dùng 几)</p>
+          <p><b>4.</b> 二十多个月 (Số chục &gt;10 → Số + 多 + Lượng từ + Danh từ)</p>
+          <p><b>5.</b> Gợi ý mẫu: 我最喜欢秋天去旅游，因为天气不冷不热。我要去北京，那儿的风景最美。 (đáp án mở, chấp nhận nhiều câu trả lời hợp lý miễn dùng đúng 要 và 最)</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ================= BÀI 2 ================= -->
+  <section class="lesson" id="bai2">
+    <div class="lesson-head">
+      <div class="seal-badge">贰</div>
+      <div class="lesson-title">
+        <span class="cn">我每天六点起床</span>
+        <span class="vi">Bài 2 · Tôi thức dậy lúc 6 giờ mỗi ngày</span>
+      </div>
+    </div>
+    <hr class="lesson-divider">
+
+    <div class="point">
+      <div class="point-head"><span class="pt-cn">是不是 — câu hỏi xác nhận</span><span class="pt-pin">shì bú shì</span></div>
+      <div class="dims">
+        <div class="dim syn"><div class="dim-label">Cú pháp</div><p>是不是 có thể đứng đầu câu, giữa câu (trước vị ngữ) hoặc cuối câu.<span class="formula-box formula">S + 是不是 + VP？ / VP，是不是？</span></p></div>
+        <div class="dim sem"><div class="dim-label">Ngữ nghĩa</div><p>Xác nhận lại một phán đoán, suy luận đã có sẵn trong đầu người hỏi; mong đợi câu trả lời đồng ý/phủ nhận.</p></div>
+        <div class="dim prag"><div class="dim-label">Ngữ dụng</div><p>Thể hiện thái độ "tôi đoán là vậy", giúp câu hỏi lịch sự, mềm mỏng hơn câu hỏi trực tiếp; phổ biến trong hội thoại thân mật.</p></div>
+      </div>
+      <div class="examples">
+        <div class="ex-line"><span class="ex-cn">你是不是很少生病？</span><span class="ex-pin">Nǐ shì bú shì hěn shǎo shēngbìng?</span><span class="ex-vi">Bạn ít khi bị ốm phải không?</span></div>
+        <div class="ex-line"><span class="ex-cn">你是不是喜欢运动？</span><span class="ex-pin">Nǐ shì bú shì xǐhuan yùndòng?</span><span class="ex-vi">Có phải bạn thích vận động không?</span></div>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="point-head"><span class="pt-cn">每 — đại từ chỉ từng cá thể</span><span class="pt-pin">měi</span></div>
+      <div class="dims">
+        <div class="dim syn"><div class="dim-label">Cú pháp</div><p>每 + Lượng từ (+都) + Danh từ / cụm động từ.<span class="formula-box formula">每 + Lg.từ + N (+都+VP)</span></p></div>
+        <div class="dim sem"><div class="dim-label">Ngữ nghĩa</div><p>Chỉ từng cá thể không sót trong một tổng thể, mang tính khái quát toàn bộ.</p></div>
+        <div class="dim prag"><div class="dim-label">Ngữ dụng</div><p>Thường đi kèm 都 để nhấn mạnh tính bao quát; dùng phổ biến khi mô tả thói quen, quy luật lặp lại hằng ngày.</p></div>
+      </div>
+      <div class="examples">
+        <div class="ex-line"><span class="ex-cn">我每天六点起床。</span><span class="ex-pin">Wǒ měitiān liù diǎn qǐchuáng.</span><span class="ex-vi">Tôi thức dậy lúc 6 giờ mỗi ngày.</span></div>
+        <div class="ex-line"><span class="ex-cn">每个人都喜欢他。</span><span class="ex-pin">Měi gè rén dōu xǐhuan tā.</span><span class="ex-vi">Mọi người đều thích anh ấy.</span></div>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="point-head"><span class="pt-cn">多 — đại từ nghi vấn hỏi mức độ</span><span class="pt-pin">duō</span></div>
+      <div class="dims">
+        <div class="dim syn"><div class="dim-label">Cú pháp</div><p>多 + Tính từ đơn âm tiết (大/高/重/远...) đứng ở vị trí hỏi mức độ.<span class="formula-box formula">多 + Adj (1 âm tiết) ?</span></p></div>
+        <div class="dim sem"><div class="dim-label">Ngữ nghĩa</div><p>Hỏi về mức độ hoặc số lượng cụ thể của một thuộc tính mà người hỏi chưa biết.</p></div>
+        <div class="dim prag"><div class="dim-label">Ngữ dụng</div><p>Dùng trong câu hỏi trung tính, lịch sự về tuổi, chiều cao, cân nặng, khoảng cách; câu trả lời luôn kèm số liệu cụ thể.</p></div>
+      </div>
+      <div class="examples">
+        <div class="ex-line"><span class="ex-cn">你多大？</span><span class="ex-pin">Nǐ duō dà?</span><span class="ex-vi">Bạn bao nhiêu tuổi?</span></div>
+        <div class="ex-line"><span class="ex-cn">这座山多高？</span><span class="ex-pin">Zhè zuò shān duō gāo?</span><span class="ex-vi">Ngọn núi này cao bao nhiêu?</span></div>
+      </div>
+    </div>
+
+    <div class="exercises">
+      <h4>Bài tập Bài 2</h4>
+      <p class="ex-sub">Kết hợp: ngữ cảnh · collocation · giao tiếp mở</p>
+      <div class="ex-item"><span class="tag ctx">Ngữ cảnh</span><span class="q">1. Điền 是不是 vào vị trí thích hợp: "你 ___ 每天都运动？" và đưa ra 1 vị trí khác cũng đúng ngữ pháp trong câu.</span></div>
+      <div class="ex-item"><span class="tag col">Collocation</span><span class="q">2. Chọn từ ghép đúng: 每天 / 每个人 / 每次 — điền vào: "___ 都要吃早饭。" (nói về thói quen của tất cả mọi người)</span></div>
+      <div class="ex-item"><span class="tag trans">Biến đổi</span><span class="q">3. Biến câu trần thuật "他很高" thành câu hỏi dùng 多: ______________？</span></div>
+      <div class="ex-item"><span class="tag ctx">Ngữ cảnh</span><span class="q">4. Bạn nghi ngờ đồng nghiệp hôm nay không đi làm vì bị ốm — hãy đặt câu hỏi xác nhận dùng 是不是.</span></div>
+      <div class="ex-item"><span class="tag open">Giao tiếp mở</span><span class="q">5. Phỏng vấn bạn cùng bàn: hỏi giờ thức dậy mỗi ngày (dùng 每) và tuổi của bạn ấy (dùng 多大).</span></div>
+      <details class="answers"><summary>Xem đáp án</summary>
+        <div class="ans-list">
+          <p><b>1.</b> 你是不是每天都运动？ — vị trí khác: 你每天都运动，是不是？</p>
+          <p><b>2.</b> 每个人都要吃早饭。</p>
+          <p><b>3.</b> 他多高？</p>
+          <p><b>4.</b> 你是不是生病了，所以今天没来上班？</p>
+          <p><b>5.</b> Gợi ý mẫu: A: 你每天几点起床？ B: 我每天七点起床。 A: 你多大？ B: 我二十岁。 (đáp án mở)</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ================= BÀI 3 ================= -->
+  <section class="lesson" id="bai3">
+    <div class="lesson-head">
+      <div class="seal-badge">叁</div>
+      <div class="lesson-title">
+        <span class="cn">左边那个红色的是我的</span>
+        <span class="vi">Bài 3 · Cái màu đỏ bên trái là của tôi</span>
+      </div>
+    </div>
+    <hr class="lesson-divider">
+
+    <div class="point">
+      <div class="point-head"><span class="pt-cn">……的 — cụm danh hoá</span><span class="pt-pin">de</span></div>
+      <div class="dims">
+        <div class="dim syn"><div class="dim-label">Cú pháp</div><p>Đại từ / Tính từ / Động từ + 的, lược bỏ danh từ trung tâm đã được xác định trong ngữ cảnh.<span class="formula-box formula">[Đt/Tt/Vt] + 的</span></p></div>
+        <div class="dim sem"><div class="dim-label">Ngữ nghĩa</div><p>Biến cụm từ thành một danh ngữ chỉ người/vật mang đặc điểm nêu ra, thay thế cho danh từ đã biết.</p></div>
+        <div class="dim prag"><div class="dim-label">Ngữ dụng</div><p>Dùng khi cả hai bên hội thoại đã rõ danh từ trung tâm là gì, giúp câu ngắn gọn, tránh lặp từ, tự nhiên trong khẩu ngữ.</p></div>
+      </div>
+      <div class="examples">
+        <div class="ex-line"><span class="ex-cn">这本书不是我的，是我哥哥的。</span><span class="ex-pin">Zhè běn shū bú shì wǒ de, shì wǒ gēge de.</span><span class="ex-vi">Cuốn sách này không phải của tôi, là của anh trai tôi.</span></div>
+        <div class="ex-line"><span class="ex-cn">左边那个红色的是我的。</span><span class="ex-pin">Zuǒbiān nà ge hóngsè de shì wǒ de.</span><span class="ex-vi">Cái màu đỏ bên trái là của tôi.</span></div>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="point-head"><span class="pt-cn">一下 — động lượng ngắn</span><span class="pt-pin">yíxià</span></div>
+      <div class="dims">
+        <div class="dim syn"><div class="dim-label">Cú pháp</div><p>Động từ + 一下 (+ Tân ngữ).<span class="formula-box formula">V + 一下 (+O)</span></p></div>
+        <div class="dim sem"><div class="dim-label">Ngữ nghĩa</div><p>Biểu thị hành động diễn ra trong thời gian ngắn, mang tính thử nghiệm hoặc nhẹ nhàng.</p></div>
+        <div class="dim prag"><div class="dim-label">Ngữ dụng</div><p>Làm giảm nhẹ ngữ khí mệnh lệnh/đề nghị, khiến lời nói lịch sự, thân thiện hơn so với câu mệnh lệnh trơn.</p></div>
+      </div>
+      <div class="examples">
+        <div class="ex-line"><span class="ex-cn">你休息一下吧。</span><span class="ex-pin">Nǐ xiūxi yíxià ba.</span><span class="ex-vi">Bạn nghỉ ngơi một chút đi.</span></div>
+        <div class="ex-line"><span class="ex-cn">我看一下。</span><span class="ex-pin">Wǒ kàn yíxià.</span><span class="ex-vi">Để tôi xem thử một chút.</span></div>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="point-head"><span class="pt-cn">真 — phó từ ngữ khí cảm thán</span><span class="pt-pin">zhēn</span></div>
+      <div class="dims">
+        <div class="dim syn"><div class="dim-label">Cú pháp</div><p>真 + Tính từ, thường kết hợp với 啊/了 cuối câu để tăng cảm thán.<span class="formula-box formula">真 + Adj (+啊)</span></p></div>
+        <div class="dim sem"><div class="dim-label">Ngữ nghĩa</div><p>Khẳng định tính xác thực của nhận định, đồng thời bộc lộ cảm xúc ngạc nhiên hoặc thán phục.</p></div>
+        <div class="dim prag"><div class="dim-label">Ngữ dụng</div><p>Dùng trong câu cảm thán khi người nói thực sự cảm nhận mạnh mẽ về sự việc, mang sắc thái chủ quan, sinh động.</p></div>
+      </div>
+      <div class="examples">
+        <div class="ex-line"><span class="ex-cn">今天天气真好！</span><span class="ex-pin">Jīntiān tiānqì zhēn hǎo!</span><span class="ex-vi">Thời tiết hôm nay thật đẹp!</span></div>
+        <div class="ex-line"><span class="ex-cn">这件衣服真漂亮。</span><span class="ex-pin">Zhè jiàn yīfu zhēn piàoliang.</span><span class="ex-vi">Bộ quần áo này thật đẹp.</span></div>
+      </div>
+    </div>
+
+    <div class="exercises">
+      <h4>Bài tập Bài 3</h4>
+      <p class="ex-sub">Kết hợp: ngữ cảnh · biến đổi cấu trúc · giao tiếp mở</p>
+      <div class="ex-item"><span class="tag ctx">Ngữ cảnh</span><span class="q">1. Trong cửa hàng có hai chiếc áo, một xanh một đỏ. Bạn muốn nói "cái màu xanh là của tôi" — dùng cấu trúc ...的: ______________</span></div>
+      <div class="ex-item"><span class="tag trans">Biến đổi</span><span class="q">2. Biến câu mệnh lệnh trực tiếp "你尝！" (bạn nếm đi!) thành câu đề nghị nhẹ nhàng hơn với 一下: ______________</span></div>
+      <div class="ex-item"><span class="tag col">Collocation</span><span class="q">3. Chọn tính từ phù hợp ghép với 真 để khen một món ăn ngon: 真 ___ ！ (gợi ý 2 đáp án khác nhau)</span></div>
+      <div class="ex-item"><span class="tag ctx">Ngữ cảnh</span><span class="q">4. Bạn nhờ đồng nghiệp xem giúp một tài liệu trong chốc lát — viết một câu lịch sự dùng 一下.</span></div>
+      <div class="ex-item"><span class="tag open">Giao tiếp mở</span><span class="q">5. Miêu tả một đồ vật của bạn cho bạn cùng lớp, dùng cấu trúc "...的" để chỉ rõ vật nào là của bạn, kèm một câu cảm thán dùng 真.</span></div>
+      <details class="answers"><summary>Xem đáp án</summary>
+        <div class="ans-list">
+          <p><b>1.</b> 蓝色的是我的。</p>
+          <p><b>2.</b> 你尝一下吧！</p>
+          <p><b>3.</b> 真好吃！ / 真香！ (đáp án mở, tính từ chỉ mùi vị)</p>
+          <p><b>4.</b> 你帮我看一下这个文件，好吗？</p>
+          <p><b>5.</b> Gợi ý mẫu: 这个红色的书包是我的，真好看！ (đáp án mở)</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ================= BÀI 4 ================= -->
+  <section class="lesson" id="bai4">
+    <div class="lesson-head">
+      <div class="seal-badge">肆</div>
+      <div class="lesson-title">
+        <span class="cn">这个工作是他帮我介绍的</span>
+        <span class="vi">Bài 4 · Công việc này là do anh ấy giới thiệu giúp tôi</span>
+      </div>
+    </div>
+    <hr class="lesson-divider">
+
+    <div class="point">
+      <div class="point-head"><span class="pt-cn">是……的 — cấu trúc nhấn mạnh</span><span class="pt-pin">shì...de</span></div>
+      <div class="dims">
+        <div class="dim syn"><div class="dim-label">Cú pháp</div><p>是 đứng trước thành phần cần nhấn mạnh (thời gian/địa điểm/phương thức/chủ thể), 的 đứng cuối câu.<span class="formula-box formula">S + 是 + [thành phần nhấn mạnh] + V(+O) + 的</span></p></div>
+        <div class="dim sem"><div class="dim-label">Ngữ nghĩa</div><p>Nhấn mạnh một chi tiết cụ thể (ai làm, khi nào, ở đâu, bằng cách nào) của một sự việc đã xảy ra và hoàn tất trong quá khứ.</p></div>
+        <div class="dim prag"><div class="dim-label">Ngữ dụng</div><p>Dùng khi cả hai bên đã biết sự việc xảy ra, chỉ cần làm rõ thêm chi tiết; 是 có thể lược bỏ ở câu khẳng định nhưng bắt buộc giữ lại ở câu phủ định (不是…的).</p></div>
+      </div>
+      <div class="examples">
+        <div class="ex-line"><span class="ex-cn">这本书是我买的。</span><span class="ex-pin">Zhè běn shū shì wǒ mǎi de.</span><span class="ex-vi">Cuốn sách này là do tôi mua.</span></div>
+        <div class="ex-line"><span class="ex-cn">这个工作是他帮我介绍的。</span><span class="ex-pin">Zhège gōngzuò shì tā bāng wǒ jièshào de.</span><span class="ex-vi">Công việc này là do anh ấy giới thiệu giúp tôi.</span></div>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="point-head"><span class="pt-cn">……的时候 — thời điểm song hành</span><span class="pt-pin">de shíhou</span></div>
+      <div class="dims">
+        <div class="dim syn"><div class="dim-label">Cú pháp</div><p>Mệnh đề 1 + 的时候, + Mệnh đề 2 (thường có 在 + V).<span class="formula-box formula">[MĐ1]的时候，[MĐ2]</span></p></div>
+        <div class="dim sem"><div class="dim-label">Ngữ nghĩa</div><p>Chỉ thời điểm hoặc khoảng thời gian mà một hành động khác đang xảy ra đồng thời.</p></div>
+        <div class="dim prag"><div class="dim-label">Ngữ dụng</div><p>Liên kết hai sự việc song song trong tường thuật, kể chuyện; mệnh đề sau thường nhấn mạnh tính "đang diễn ra" bằng 在.</p></div>
+      </div>
+      <div class="examples">
+        <div class="ex-line"><span class="ex-cn">我睡觉的时候，妈妈在做饭。</span><span class="ex-pin">Wǒ shuìjiào de shíhou, māma zài zuò fàn.</span><span class="ex-vi">Lúc tôi ngủ, mẹ đang nấu cơm.</span></div>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="point-head"><span class="pt-cn">已经 — phó từ chỉ hoàn thành</span><span class="pt-pin">yǐjīng</span></div>
+      <div class="dims">
+        <div class="dim syn"><div class="dim-label">Cú pháp</div><p>S + 已经 + V(+O) + 了.<span class="formula-box formula">S + 已经 + VP + 了</span></p></div>
+        <div class="dim sem"><div class="dim-label">Ngữ nghĩa</div><p>Biểu thị hành động/trạng thái đã hoàn thành hoặc đã đạt đến một mức độ nhất định tính đến thời điểm nói.</p></div>
+        <div class="dim prag"><div class="dim-label">Ngữ dụng</div><p>Thường phối hợp với 了 cuối câu để xác nhận sự hoàn tất; hay dùng khi thông báo tin tức, cập nhật tình trạng cho người nghe.</p></div>
+      </div>
+      <div class="examples">
+        <div class="ex-line"><span class="ex-cn">王老师已经回家了。</span><span class="ex-pin">Wáng lǎoshī yǐjīng huí jiā le.</span><span class="ex-vi">Thầy Vương đã về nhà rồi.</span></div>
+      </div>
+    </div>
+
+    <div class="exercises">
+      <h4>Bài tập Bài 4</h4>
+      <p class="ex-sub">Kết hợp: biến đổi cấu trúc · ngữ cảnh · giao tiếp mở</p>
+      <div class="ex-item"><span class="tag trans">Biến đổi</span><span class="q">1. Nhấn mạnh phần gạch chân bằng cấu trúc 是……的: "他 <u>昨天</u> 来的北京。" → sắp xếp lại đúng vị trí 是 và 的.</span></div>
+      <div class="ex-item"><span class="tag ctx">Ngữ cảnh</span><span class="q">2. Kể lại: khi bạn đang học bài thì em trai đang xem tivi — dùng ……的时候.</span></div>
+      <div class="ex-item"><span class="tag trans">Biến đổi</span><span class="q">3. Chuyển câu phủ định: "这本书是我买的。" → phủ định đúng (giữ 是): ______________</span></div>
+      <div class="ex-item"><span class="tag col">Collocation</span><span class="q">4. Điền 已经…了 vào câu: "他 ___ 吃 ___ 饭。" (anh ấy đã ăn cơm rồi)</span></div>
+      <div class="ex-item"><span class="tag open">Giao tiếp mở</span><span class="q">5. Kể cho bạn nghe công việc/món đồ nào đó của bạn — ai làm, khi nào, bằng cách nào — dùng đủ 是……的, ……的时候 và 已经.</span></div>
+      <details class="answers"><summary>Xem đáp án</summary>
+        <div class="ans-list">
+          <p><b>1.</b> 他是昨天来北京的。</p>
+          <p><b>2.</b> 我学习的时候，弟弟在看电视。</p>
+          <p><b>3.</b> 这本书不是我买的。</p>
+          <p><b>4.</b> 他已经吃了饭。 / 他已经吃饭了。</p>
+          <p><b>5.</b> Gợi ý mẫu: 这个手机是我爸爸去年买的。他买的时候，我还在上学。现在我已经用了一年了。 (đáp án mở)</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ================= BÀI 5 ================= -->
+  <section class="lesson" id="bai5">
+    <div class="lesson-head">
+      <div class="seal-badge">伍</div>
+      <div class="lesson-title">
+        <span class="cn">就买这件吧</span>
+        <span class="vi">Bài 5 · Thì mua cái này đi</span>
+      </div>
+    </div>
+    <hr class="lesson-divider">
+
+    <div class="point">
+      <div class="point-head"><span class="pt-cn">就 — phó từ đưa ra kết luận</span><span class="pt-pin">jiù</span></div>
+      <div class="dims">
+        <div class="dim syn"><div class="dim-label">Cú pháp</div><p>(Tình huống nêu trước), + S + 就 + VP (+吧).<span class="formula-box formula">[Điều kiện]，S+就+VP+吧</span></p></div>
+        <div class="dim sem"><div class="dim-label">Ngữ nghĩa</div><p>Đưa ra kết luận, quyết định hoặc giải pháp được suy ra một cách logic từ tình huống vừa nêu.</p></div>
+        <div class="dim prag"><div class="dim-label">Ngữ dụng</div><p>Dùng khi đưa ra lời khuyên hoặc quyết định dứt khoát; kết hợp 吧 giúp lời nói bớt áp đặt, gần gũi hơn.</p></div>
+      </div>
+      <div class="examples">
+        <div class="ex-line"><span class="ex-cn">你不想去，就在家休息吧。</span><span class="ex-pin">Nǐ bù xiǎng qù, jiù zài jiā xiūxi ba.</span><span class="ex-vi">Bạn không muốn đi thì ở nhà nghỉ ngơi đi.</span></div>
+        <div class="ex-line"><span class="ex-cn">就买这件吧。</span><span class="ex-pin">Jiù mǎi zhè jiàn ba.</span><span class="ex-vi">Thì mua cái này đi.</span></div>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="point-head"><span class="pt-cn">还 — phó từ ngữ khí "tàm tạm"</span><span class="pt-pin">hái</span></div>
+      <div class="dims">
+        <div class="dim syn"><div class="dim-label">Cú pháp</div><p>还 + 可以/行/好, thường đứng cuối câu đánh giá.<span class="formula-box formula">S + 还 + 可以/行</span></p></div>
+        <div class="dim sem"><div class="dim-label">Ngữ nghĩa</div><p>Biểu thị mức độ đạt yêu cầu tối thiểu — không xuất sắc nhưng chấp nhận được.</p></div>
+        <div class="dim prag"><div class="dim-label">Ngữ dụng</div><p>Dùng khi đánh giá khiêm tốn, giảm nhẹ mức độ khen ngợi bản thân — phù hợp văn hoá giao tiếp tế nhị, tránh khoe khoang.</p></div>
+      </div>
+      <div class="examples">
+        <div class="ex-line"><span class="ex-cn">我觉得听和说还可以。</span><span class="ex-pin">Wǒ juéde tīng hé shuō hái kěyǐ.</span><span class="ex-vi">Tôi thấy nghe và nói cũng tạm được.</span></div>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="point-head"><span class="pt-cn">有点儿 — phó từ chỉ mức độ nhẹ (tiêu cực)</span><span class="pt-pin">yǒudiǎnr</span></div>
+      <div class="dims">
+        <div class="dim syn"><div class="dim-label">Cú pháp</div><p>有点儿 + Tính từ/Động từ mang nghĩa tiêu cực.<span class="formula-box formula">有点儿 + Adj(-)</span></p></div>
+        <div class="dim sem"><div class="dim-label">Ngữ nghĩa</div><p>Biểu thị mức độ nhẹ của một trạng thái không như mong muốn.</p></div>
+        <div class="dim prag"><div class="dim-label">Ngữ dụng</div><p>Hầu như chỉ dùng với sắc thái tiêu cực (lạnh, mệt, đắt, khó...); khác 一点儿 (đứng sau tính từ, dùng cho so sánh, trung tính).</p></div>
+      </div>
+      <div class="examples">
+        <div class="ex-line"><span class="ex-cn">今天天气有点儿冷。</span><span class="ex-pin">Jīntiān tiānqì yǒudiǎnr lěng.</span><span class="ex-vi">Thời tiết hôm nay hơi lạnh.</span></div>
+      </div>
+    </div>
+
+    <div class="exercises">
+      <h4>Bài tập Bài 5</h4>
+      <p class="ex-sub">Kết hợp: ngữ cảnh · phân biệt cấu trúc (有点儿 vs 一点儿) · giao tiếp mở</p>
+      <div class="ex-item"><span class="tag ctx">Ngữ cảnh</span><span class="q">1. Bạn của bạn phân vân giữa hai món hàng, cuối cùng bạn đưa ra quyết định giúp — dùng 就……吧.</span></div>
+      <div class="ex-item"><span class="tag col">Collocation</span><span class="q">2. Điền 有点儿 hoặc 一点儿: "这件衣服 ___ 贵，能不能便宜 ___？"</span></div>
+      <div class="ex-item"><span class="tag trans">Biến đổi</span><span class="q">3. Khi được hỏi "你觉得这个电影怎么样？" và bạn muốn trả lời khiêm tốn "cũng tạm được" — viết câu dùng 还.</span></div>
+      <div class="ex-item"><span class="tag ctx">Ngữ cảnh</span><span class="q">4. Miêu tả cảm giác của bạn khi trời quá nóng, dùng 有点儿.</span></div>
+      <div class="ex-item"><span class="tag open">Giao tiếp mở</span><span class="q">5. Đóng vai người bán và người mua: người mua phân vân, người bán tư vấn kết luận (就……吧), người mua nhận xét giá hơi đắt (有点儿贵) rồi đồng ý.</span></div>
+      <details class="answers"><summary>Xem đáp án</summary>
+        <div class="ans-list">
+          <p><b>1.</b> 你觉得难选，就买这个吧。</p>
+          <p><b>2.</b> 这件衣服 <b>有点儿</b> 贵，能不能便宜 <b>一点儿</b>？</p>
+          <p><b>3.</b> 我觉得还可以，不是特别好看。</p>
+          <p><b>4.</b> 今天天气有点儿热。</p>
+          <p><b>5.</b> Gợi ý mẫu: 卖家：你喜欢红色的，就买这件吧！ 买家：这件有点儿贵，可以便宜一点儿吗？ 卖家：好，给你便宜一点儿。 (đáp án mở)</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ================= BÀI 6 ================= -->
+  <section class="lesson" id="bai6">
+    <div class="lesson-head">
+      <div class="seal-badge">陆</div>
+      <div class="lesson-title">
+        <span class="cn">你怎么不吃了</span>
+        <span class="vi">Bài 6 · Sao bạn lại không ăn nữa</span>
+      </div>
+    </div>
+    <hr class="lesson-divider">
+
+    <div class="point">
+      <div class="point-head"><span class="pt-cn">怎么 — hỏi nguyên nhân</span><span class="pt-pin">zěnme</span></div>
+      <div class="dims">
+        <div class="dim syn"><div class="dim-label">Cú pháp</div><p>怎么 đứng trước động từ, thường trong câu hỏi có yếu tố phủ định hoặc bất thường.<span class="formula-box formula">怎么 + (不) + V ？</span></p></div>
+        <div class="dim sem"><div class="dim-label">Ngữ nghĩa</div><p>Hỏi nguyên nhân của một hiện tượng không như dự đoán, khác với thông thường.</p></div>
+        <div class="dim prag"><div class="dim-label">Ngữ dụng</div><p>Thường hàm chứa thái độ ngạc nhiên, đôi khi mang sắc thái trách móc nhẹ hoặc quan tâm, khác với 为什么 mang tính trung lập hơn.</p></div>
+      </div>
+      <div class="examples">
+        <div class="ex-line"><span class="ex-cn">你怎么不吃饭？</span><span class="ex-pin">Nǐ zěnme bù chīfàn?</span><span class="ex-vi">Sao bạn lại không ăn cơm?</span></div>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="point-head"><span class="pt-cn">Lặp lại lượng từ</span><span class="pt-pin">AA</span></div>
+      <div class="dims">
+        <div class="dim syn"><div class="dim-label">Cú pháp</div><p>Lượng từ + Lượng từ (+都) + VP.<span class="formula-box formula">Lg.từ+Lg.từ+都+VP</span></p></div>
+        <div class="dim sem"><div class="dim-label">Ngữ nghĩa</div><p>Biểu thị ý "mỗi, mọi", nhấn mạnh tính phổ biến, đồng nhất của một đặc điểm trên toàn bộ cá thể.</p></div>
+        <div class="dim prag"><div class="dim-label">Ngữ dụng</div><p>Dùng trong khẩu ngữ để nhấn mạnh mạnh hơn so với dùng 每, tạo sắc thái sinh động, cảm thán.</p></div>
+      </div>
+      <div class="examples">
+        <div class="ex-line"><span class="ex-cn">衣服件件都很漂亮。</span><span class="ex-pin">Yīfu jiàn jiàn dōu hěn piàoliang.</span><span class="ex-vi">Quần áo bộ nào cũng đều rất đẹp.</span></div>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="point-head"><span class="pt-cn">因为……所以…… — quan hệ nhân quả</span><span class="pt-pin">yīnwèi...suǒyǐ</span></div>
+      <div class="dims">
+        <div class="dim syn"><div class="dim-label">Cú pháp</div><p>因为 + Nguyên nhân, 所以 + Kết quả (có thể lược bỏ một trong hai từ nối trong khẩu ngữ).<span class="formula-box formula">因为+NN，所以+KQ</span></p></div>
+        <div class="dim sem"><div class="dim-label">Ngữ nghĩa</div><p>Biểu thị quan hệ nhân quả rõ ràng giữa hai mệnh đề: mệnh đề sau là kết quả tất yếu của mệnh đề trước.</p></div>
+        <div class="dim prag"><div class="dim-label">Ngữ dụng</div><p>Dùng phổ biến khi giải thích lý do trong cả văn nói và văn viết; văn nói thường chỉ giữ lại 所以 ở vế sau.</p></div>
+      </div>
+      <div class="examples">
+        <div class="ex-line"><span class="ex-cn">因为下雨，所以我没去跑步。</span><span class="ex-pin">Yīnwèi xiàyǔ, suǒyǐ wǒ méi qù pǎobù.</span><span class="ex-vi">Vì trời mưa nên tôi không đi chạy bộ.</span></div>
+      </div>
+    </div>
+
+    <div class="exercises">
+      <h4>Bài tập Bài 6</h4>
+      <p class="ex-sub">Kết hợp: ngữ cảnh · biến đổi cấu trúc · giao tiếp mở</p>
+      <div class="ex-item"><span class="tag ctx">Ngữ cảnh</span><span class="q">1. Bạn ngạc nhiên vì bạn thân hôm nay đến muộn — đặt câu hỏi dùng 怎么.</span></div>
+      <div class="ex-item"><span class="tag trans">Biến đổi</span><span class="q">2. Biến câu "每本书都很有意思" thành câu dùng lặp lại lượng từ mang sắc thái nhấn mạnh hơn: ______________</span></div>
+      <div class="ex-item"><span class="tag col">Collocation</span><span class="q">3. Nối hai vế câu bằng 因为……所以……: "他生病了 / 他今天没来上课"</span></div>
+      <div class="ex-item"><span class="tag trans">Biến đổi</span><span class="q">4. Viết lại câu 3 theo văn nói tự nhiên, chỉ giữ lại 所以: ______________</span></div>
+      <div class="ex-item"><span class="tag open">Giao tiếp mở</span><span class="q">5. Giải thích cho bạn nghe lý do bạn không đi học hôm qua, dùng 因为……所以…… và một câu hỏi ngạc nhiên dùng 怎么 mà bạn của bạn có thể hỏi lại.</span></div>
+      <details class="answers"><summary>Xem đáp án</summary>
+        <div class="ans-list">
+          <p><b>1.</b> 你怎么现在才来？</p>
+          <p><b>2.</b> 本本书都很有意思。</p>
+          <p><b>3.</b> 因为他生病了，所以他今天没来上课。</p>
+          <p><b>4.</b> 他生病了，所以今天没来上课。</p>
+          <p><b>5.</b> Gợi ý mẫu: 因为我昨天有点儿不舒服，所以没去上课。朋友问：你昨天怎么没来？ (đáp án mở)</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ================= BÀI 7 ================= -->
+  <section class="lesson" id="bai7">
+    <div class="lesson-head">
+      <div class="seal-badge">柒</div>
+      <div class="lesson-title">
+        <span class="cn">你家离公司远吗</span>
+        <span class="vi">Bài 7 · Nhà bạn cách công ty xa không</span>
+      </div>
+    </div>
+    <hr class="lesson-divider">
+
+    <div class="point">
+      <div class="point-head"><span class="pt-cn">还 — phó từ chỉ sự tiếp diễn</span><span class="pt-pin">hái</span></div>
+      <div class="dims">
+        <div class="dim syn"><div class="dim-label">Cú pháp</div><p>S + 还 + (在) + VP.<span class="formula-box formula">S + 还 + (在) + VP</span></p></div>
+        <div class="dim sem"><div class="dim-label">Ngữ nghĩa</div><p>Biểu thị trạng thái/hành động vẫn đang tiếp tục, chưa kết thúc — khác nghĩa "tàm tạm" của 还 ở Bài 5.</p></div>
+        <div class="dim prag"><div class="dim-label">Ngữ dụng</div><p>Dùng khi thông báo một điều gì đó kéo dài ngoài mong đợi hoặc dự tính của người nghe.</p></div>
+      </div>
+      <div class="examples">
+        <div class="ex-line"><span class="ex-cn">你还在睡觉。</span><span class="ex-pin">Nǐ hái zài shuìjiào.</span><span class="ex-vi">Bạn vẫn còn đang ngủ.</span></div>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="point-head"><span class="pt-cn">就 — phó từ chỉ thời gian sớm</span><span class="pt-pin">jiù</span></div>
+      <div class="dims">
+        <div class="dim syn"><div class="dim-label">Cú pháp</div><p>S + [thời gian] + 就 + VP + 了.<span class="formula-box formula">S+[t.gian]+就+VP+了</span></p></div>
+        <div class="dim sem"><div class="dim-label">Ngữ nghĩa</div><p>Nhấn mạnh hành động xảy ra sớm, nhanh hoặc thuận lợi hơn so với mong đợi.</p></div>
+        <div class="dim prag"><div class="dim-label">Ngữ dụng</div><p>Tương phản với 才 (biểu thị muộn); dùng để bộc lộ đánh giá của người nói về tốc độ diễn ra sự việc.</p></div>
+      </div>
+      <div class="examples">
+        <div class="ex-line"><span class="ex-cn">我们七点就来教室了。</span><span class="ex-pin">Wǒmen qī diǎn jiù lái jiàoshì le.</span><span class="ex-vi">Chúng tôi 7 giờ đã đến lớp rồi.</span></div>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="point-head"><span class="pt-cn">离 — động từ chỉ khoảng cách</span><span class="pt-pin">lí</span></div>
+      <div class="dims">
+        <div class="dim syn"><div class="dim-label">Cú pháp</div><p>A + 离 + B + Tính từ/Khoảng cách cụ thể.<span class="formula-box formula">A + 离 + B + 远/近/…</span></p></div>
+        <div class="dim sem"><div class="dim-label">Ngữ nghĩa</div><p>Biểu thị khoảng cách không gian hoặc thời gian giữa hai điểm mốc A và B.</p></div>
+        <div class="dim prag"><div class="dim-label">Ngữ dụng</div><p>A là điểm xuất phát để so sánh, B là điểm mốc quy chiếu; trật tự A-离-B cố định, không đảo tuỳ ý.</p></div>
+      </div>
+      <div class="examples">
+        <div class="ex-line"><span class="ex-cn">我家离学校很近。</span><span class="ex-pin">Wǒ jiā lí xuéxiào hěn jìn.</span><span class="ex-vi">Nhà tôi cách trường rất gần.</span></div>
+        <div class="ex-line"><span class="ex-cn">你家离公司远吗？</span><span class="ex-pin">Nǐ jiā lí gōngsī yuǎn ma?</span><span class="ex-vi">Nhà bạn cách công ty xa không?</span></div>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="point-head"><span class="pt-cn">呢 — trợ từ ngữ khí cuối câu</span><span class="pt-pin">ne</span></div>
+      <div class="dims">
+        <div class="dim syn"><div class="dim-label">Cú pháp</div><p>Câu trần thuật + 呢 (đứng cuối câu).<span class="formula-box formula">[Câu trần thuật] + 呢</span></p></div>
+        <div class="dim sem"><div class="dim-label">Ngữ nghĩa</div><p>Nhấn mạnh sự tồn tại hoặc tính tiếp diễn của sự việc, thu hút sự chú ý của người nghe.</p></div>
+        <div class="dim prag"><div class="dim-label">Ngữ dụng</div><p>Dùng trong khẩu ngữ để tăng tính khẳng định nhẹ nhàng, thường xuất hiện khi trả lời hoặc nhắc lại thông tin cho người nghe.</p></div>
+      </div>
+      <div class="examples">
+        <div class="ex-line"><span class="ex-cn">手机在桌子上呢。</span><span class="ex-pin">Shǒujī zài zhuōzi shang ne.</span><span class="ex-vi">Điện thoại đang ở trên bàn đấy.</span></div>
+      </div>
+    </div>
+
+    <div class="exercises">
+      <h4>Bài tập Bài 7</h4>
+      <p class="ex-sub">Kết hợp: ngữ cảnh · phân biệt nghĩa 还 · giao tiếp mở</p>
+      <div class="ex-item"><span class="tag ctx">Ngữ cảnh</span><span class="q">1. Đã 12 giờ trưa mà em bạn vẫn chưa dậy — miêu tả bằng 还.</span></div>
+      <div class="ex-item"><span class="tag trans">Biến đổi</span><span class="q">2. Nhấn mạnh việc bạn đến rất sớm (6 giờ) dù giờ hẹn là 7 giờ — dùng 就: ______________</span></div>
+      <div class="ex-item"><span class="tag col">Collocation</span><span class="q">3. Đặt câu hỏi về khoảng cách từ nhà bạn đến siêu thị, dùng 离.</span></div>
+      <div class="ex-item"><span class="tag ctx">Ngữ cảnh</span><span class="q">4. Bạn nhắc lại cho ai đó rằng chìa khoá đang ở trong túi — dùng 呢 cuối câu.</span></div>
+      <div class="ex-item"><span class="tag open">Giao tiếp mở</span><span class="q">5. Miêu tả quãng đường đi làm/đi học của bạn: nhà cách công ty/trường bao xa (离), mấy giờ bạn thường đến (就 nếu sớm).</span></div>
+      <details class="answers"><summary>Xem đáp án</summary>
+        <div class="ans-list">
+          <p><b>1.</b> 都十二点了，他还在睡觉。</p>
+          <p><b>2.</b> 我们六点就到了，比约定的时间早。</p>
+          <p><b>3.</b> 你家离超市远吗？</p>
+          <p><b>4.</b> 钥匙在包里呢。</p>
+          <p><b>5.</b> Gợi ý mẫu: 我家离公司不远，只有两公里。我每天七点就到公司了。 (đáp án mở)</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ================= BÀI 8 ================= -->
+  <section class="lesson" id="bai8">
+    <div class="lesson-head">
+      <div class="seal-badge">捌</div>
+      <div class="lesson-title">
+        <span class="cn">让我想想再告诉你</span>
+        <span class="vi">Bài 8 · Để tôi nghĩ rồi sẽ nói cho bạn sau</span>
+      </div>
+    </div>
+    <hr class="lesson-divider">
+
+    <div class="point">
+      <div class="point-head"><span class="pt-cn">……，好吗？ — hỏi ý kiến đồng ý</span><span class="pt-pin">hǎo ma</span></div>
+      <div class="dims">
+        <div class="dim syn"><div class="dim-label">Cú pháp</div><p>[Câu đề nghị], + 好吗？ đứng cuối câu.<span class="formula-box formula">[Đề nghị]，好吗？</span></p></div>
+        <div class="dim sem"><div class="dim-label">Ngữ nghĩa</div><p>Hỏi ý kiến, xin sự đồng ý của người nghe về đề nghị vừa nêu ra.</p></div>
+        <div class="dim prag"><div class="dim-label">Ngữ dụng</div><p>Tăng tính lịch sự, thể hiện sự tôn trọng ý kiến đối phương thay vì áp đặt quyết định.</p></div>
+      </div>
+      <div class="examples">
+        <div class="ex-line"><span class="ex-cn">我们明天去，好吗？</span><span class="ex-pin">Wǒmen míngtiān qù, hǎo ma?</span><span class="ex-vi">Ngày mai chúng ta đi, được không?</span></div>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="point-head"><span class="pt-cn">再 — phó từ hành động lặp lại (tương lai)</span><span class="pt-pin">zài</span></div>
+      <div class="dims">
+        <div class="dim syn"><div class="dim-label">Cú pháp</div><p>S + 再 + VP (hành động chưa xảy ra, dự định lặp lại/tiếp tục).<span class="formula-box formula">S + 再 + VP</span></p></div>
+        <div class="dim sem"><div class="dim-label">Ngữ nghĩa</div><p>Biểu thị hành động sẽ được lặp lại hoặc tiếp tục thực hiện thêm lần nữa trong tương lai.</p></div>
+        <div class="dim prag"><div class="dim-label">Ngữ dụng</div><p>Khác 又 (dùng cho hành động đã lặp lại trong quá khứ), 再 chỉ dùng cho việc chưa xảy ra/dự định.</p></div>
+      </div>
+      <div class="examples">
+        <div class="ex-line"><span class="ex-cn">你明天再给我打电话吧。</span><span class="ex-pin">Nǐ míngtiān zài gěi wǒ dǎ diànhuà ba.</span><span class="ex-vi">Ngày mai bạn gọi điện lại cho tôi nhé.</span></div>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="point-head"><span class="pt-cn">Câu kiêm ngữ 让 / 叫 / 请</span><span class="pt-pin">ràng / jiào / qǐng</span></div>
+      <div class="dims">
+        <div class="dim syn"><div class="dim-label">Cú pháp</div><p>S1 + 让/叫/请 + O1(=S2) + VP2, O1 vừa là tân ngữ của động từ 1 vừa là chủ ngữ của động từ 2.<span class="formula-box formula">S1+让/叫/请+O1+VP2</span></p></div>
+        <div class="dim sem"><div class="dim-label">Ngữ nghĩa</div><p>Biểu thị ý sai khiến, cho phép hoặc mời một ai đó thực hiện hành động thứ hai.</p></div>
+        <div class="dim prag"><div class="dim-label">Ngữ dụng</div><p>让/叫 mang tính sai khiến trung tính hoặc thân mật; 请 mang tính lịch sự, trang trọng hơn, thường dùng khi mời.</p></div>
+      </div>
+      <div class="examples">
+        <div class="ex-line"><span class="ex-cn">我请你吃饭。</span><span class="ex-pin">Wǒ qǐng nǐ chī fàn.</span><span class="ex-vi">Tôi mời bạn ăn cơm.</span></div>
+        <div class="ex-line"><span class="ex-cn">让我想想再告诉你。</span><span class="ex-pin">Ràng wǒ xiǎngxiang zài gàosu nǐ.</span><span class="ex-vi">Để tôi nghĩ rồi sẽ nói cho bạn sau.</span></div>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="point-head"><span class="pt-cn">Động từ lặp lại</span><span class="pt-pin">AA / A一A / ABAB</span></div>
+      <div class="dims">
+        <div class="dim syn"><div class="dim-label">Cú pháp</div><p>AA hoặc A一A với động từ đơn âm tiết; ABAB với động từ song âm tiết.<span class="formula-box formula">看看 / 想一想 / 准备准备</span></p></div>
+        <div class="dim sem"><div class="dim-label">Ngữ nghĩa</div><p>Giảm nhẹ mức độ, thời lượng của hành động, mang tính thử nghiệm, nhẹ nhàng, không nghiêm trọng.</p></div>
+        <div class="dim prag"><div class="dim-label">Ngữ dụng</div><p>Thường dùng trong đề nghị, gợi ý để câu nói bớt cứng nhắc, tạo cảm giác thân thiện, tuỳ ý hơn ra lệnh.</p></div>
+      </div>
+      <div class="examples">
+        <div class="ex-line"><span class="ex-cn">看看</span><span class="ex-pin">kàn kan</span><span class="ex-vi">Xem thử</span></div>
+        <div class="ex-line"><span class="ex-cn">准备准备</span><span class="ex-pin">zhǔnbèi zhǔnbèi</span><span class="ex-vi">Chuẩn bị một chút</span></div>
+      </div>
+    </div>
+
+    <div class="exercises">
+      <h4>Bài tập Bài 8</h4>
+      <p class="ex-sub">Kết hợp: ngữ cảnh · biến đổi cấu trúc · giao tiếp mở</p>
+      <div class="ex-item"><span class="tag ctx">Ngữ cảnh</span><span class="q">1. Bạn đề nghị cả nhóm đi ăn tối, hỏi ý kiến lịch sự bằng ……好吗？</span></div>
+      <div class="ex-item"><span class="tag trans">Biến đổi</span><span class="q">2. Biến động từ "看" thành dạng lặp mang nghĩa "xem thử một chút": ______________</span></div>
+      <div class="ex-item"><span class="tag col">Collocation</span><span class="q">3. Điền 让/叫/请 phù hợp nhất (trang trọng nhất) vào: "老师 ___ 我们明天交作业。" và "我 ___ 你喝咖啡，好吗？"</span></div>
+      <div class="ex-item"><span class="tag trans">Biến đổi</span><span class="q">4. Viết lại "明天你给我打电话" thành câu có 再 để nhấn mạnh hành động lặp lại trong tương lai: ______________</span></div>
+      <div class="ex-item"><span class="tag open">Giao tiếp mở</span><span class="q">5. Bạn chưa quyết định được việc gì, hãy trả lời "để tôi nghĩ thêm rồi báo lại sau" dùng 让 + động từ lặp lại + 再.</span></div>
+      <details class="answers"><summary>Xem đáp án</summary>
+        <div class="ans-list">
+          <p><b>1.</b> 我们今天晚上一起吃饭，好吗？</p>
+          <p><b>2.</b> 看一看 / 看看</p>
+          <p><b>3.</b> 老师 <b>叫</b> 我们明天交作业。 我 <b>请</b> 你喝咖啡，好吗？</p>
+          <p><b>4.</b> 明天你再给我打电话吧。</p>
+          <p><b>5.</b> Gợi ý mẫu: 让我想一想，再告诉你，好吗？ (đáp án mở, cần chứa 让、动词重叠、再)</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ================= BÀI 9 ================= -->
+  <section class="lesson" id="bai9">
+    <div class="lesson-head">
+      <div class="seal-badge">玖</div>
+      <div class="lesson-title">
+        <span class="cn">题太多，我没做完</span>
+        <span class="vi">Bài 9 · Đề bài quá nhiều, tôi làm chưa xong</span>
+      </div>
+    </div>
+    <hr class="lesson-divider">
+
+    <div class="point">
+      <div class="point-head"><span class="pt-cn">Bổ ngữ kết quả</span><span class="pt-pin">结果补语</span></div>
+      <div class="dims">
+        <div class="dim syn"><div class="dim-label">Cú pháp</div><p>Động từ + Bổ ngữ kết quả (+了). Phủ định: 没 + V + Bổ ngữ (không dùng 了).<span class="formula-box formula">V+完/懂/见/到/好/错(+了)</span></p></div>
+        <div class="dim sem"><div class="dim-label">Ngữ nghĩa</div><p>Biểu thị kết quả cụ thể mà hành động của động từ chính đạt được — hoặc không đạt được ở dạng phủ định.</p></div>
+        <div class="dim prag"><div class="dim-label">Ngữ dụng</div><p>Bắt buộc phải có khi người nói muốn diễn đạt rõ hành động đã đi đến kết quả nào; thiếu bổ ngữ khiến câu chỉ nói về hành động mà không rõ kết quả.</p></div>
+      </div>
+      <div class="examples">
+        <div class="ex-line"><span class="ex-cn">我准备好了。</span><span class="ex-pin">Wǒ zhǔnbèi hǎo le.</span><span class="ex-vi">Tôi đã chuẩn bị xong rồi.</span></div>
+        <div class="ex-line"><span class="ex-cn">题太多，我没做完。</span><span class="ex-pin">Tí tài duō, wǒ méi zuò wán.</span><span class="ex-vi">Đề bài quá nhiều, tôi làm chưa xong.</span></div>
+        <div class="ex-line"><span class="ex-cn">没听懂</span><span class="ex-pin">méi tīng dǒng</span><span class="ex-vi">Nghe không hiểu</span></div>
+      </div>
+    </div>
+
+    <div class="exercises">
+      <h4>Bài tập Bài 9</h4>
+      <p class="ex-sub">Kết hợp: collocation bổ ngữ · biến đổi cấu trúc · ngữ cảnh · giao tiếp mở</p>
+      <div class="ex-item"><span class="tag col">Collocation</span><span class="q">1. Ghép động từ với bổ ngữ kết quả phù hợp: 听 + ___ (hiểu) / 找 + ___ (thấy) / 写 + ___ (sai) / 吃 + ___ (xong)</span></div>
+      <div class="ex-item"><span class="tag trans">Biến đổi</span><span class="q">2. Chuyển câu khẳng định "我做完了作业" thành phủ định đúng ngữ pháp (lưu ý bỏ 了): ______________</span></div>
+      <div class="ex-item"><span class="tag ctx">Ngữ cảnh</span><span class="q">3. Bạn giảng bài nhưng bạn cùng lớp vẫn không hiểu — bạn ấy nói câu gì (dùng bổ ngữ 懂)?</span></div>
+      <div class="ex-item"><span class="tag ctx">Ngữ cảnh</span><span class="q">4. Bạn tìm chìa khoá khắp nơi và cuối cùng thấy nó — dùng bổ ngữ 到 hoặc 见.</span></div>
+      <div class="ex-item"><span class="tag open">Giao tiếp mở</span><span class="q">5. Kể lại một việc bạn chưa làm xong hôm nay và lý do, dùng 没 + V + bổ ngữ kết quả.</span></div>
+      <details class="answers"><summary>Xem đáp án</summary>
+        <div class="ans-list">
+          <p><b>1.</b> 听懂 / 找到(见) / 写错 / 吃完</p>
+          <p><b>2.</b> 我没做完作业。</p>
+          <p><b>3.</b> 对不起，我没听懂，你能再说一遍吗？</p>
+          <p><b>4.</b> 我找到钥匙了！ / 我看见钥匙了！</p>
+          <p><b>5.</b> Gợi ý mẫu: 今天工作太多，我没做完，明天再继续。 (đáp án mở)</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ================= BÀI 10 ================= -->
+  <section class="lesson" id="bai10">
+    <div class="lesson-head">
+      <div class="seal-badge">拾</div>
+      <div class="lesson-title">
+        <span class="cn">别找了，手机在桌子上呢</span>
+        <span class="vi">Bài 10 · Đừng tìm nữa, điện thoại ở trên bàn kìa</span>
+      </div>
+    </div>
+    <hr class="lesson-divider">
+
+    <div class="point">
+      <div class="point-head"><span class="pt-cn">别 / 不要……了 — câu cầu khiến ngăn cản</span><span class="pt-pin">bié / bú yào...le</span></div>
+      <div class="dims">
+        <div class="dim syn"><div class="dim-label">Cú pháp</div><p>别/不要 + Động từ (+Tân ngữ) + 了.<span class="formula-box formula">别/不要 + VP + 了</span></p></div>
+        <div class="dim sem"><div class="dim-label">Ngữ nghĩa</div><p>Biểu thị mệnh lệnh ngăn cản, yêu cầu người nghe dừng lại hoặc không thực hiện hành động đang/sắp diễn ra.</p></div>
+        <div class="dim prag"><div class="dim-label">Ngữ dụng</div><p>别 mang sắc thái thân mật, khẩu ngữ hơn 不要; có thể thêm ngữ khí từ (吧/啦) để giảm bớt tính ra lệnh, tăng sự gần gũi.</p></div>
+      </div>
+      <div class="examples">
+        <div class="ex-line"><span class="ex-cn">别找了，手机在桌子上呢。</span><span class="ex-pin">Bié zhǎo le, shǒujī zài zhuōzi shang ne.</span><span class="ex-vi">Đừng tìm nữa, điện thoại ở trên bàn kìa.</span></div>
+        <div class="ex-line"><span class="ex-cn">不要看电视了。</span><span class="ex-pin">Búyào kàn diànshì le.</span><span class="ex-vi">Đừng xem tivi nữa.</span></div>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="point-head"><span class="pt-cn">对 — giới từ chỉ mối tương quan</span><span class="pt-pin">duì</span></div>
+      <div class="dims">
+        <div class="dim syn"><div class="dim-label">Cú pháp</div><p>A + 对 + B + (很/非常) + Tính từ/VP.<span class="formula-box formula">A + 对 + B + 很 + Adj</span></p></div>
+        <div class="dim sem"><div class="dim-label">Ngữ nghĩa</div><p>Chỉ mối quan hệ tác động, ảnh hưởng hoặc liên quan giữa hai đối tượng A và B.</p></div>
+        <div class="dim prag"><div class="dim-label">Ngữ dụng</div><p>Thường dùng để nêu nhận định, đánh giá tác động tích cực/tiêu cực của một sự vật hoặc hành động đến một đối tượng khác.</p></div>
+      </div>
+      <div class="examples">
+        <div class="ex-line"><span class="ex-cn">跑步对身体很好。</span><span class="ex-pin">Pǎobù duì shēntǐ hěn hǎo.</span><span class="ex-vi">Chạy bộ rất tốt cho sức khỏe.</span></div>
+      </div>
+    </div>
+
+    <div class="exercises">
+      <h4>Bài tập Bài 10</h4>
+      <p class="ex-sub">Kết hợp: ngữ cảnh · biến đổi cấu trúc · giao tiếp mở</p>
+      <div class="ex-item"><span class="tag ctx">Ngữ cảnh</span><span class="q">1. Em trai bạn đang chơi điện thoại quá khuya — yêu cầu dừng lại bằng 别……了.</span></div>
+      <div class="ex-item"><span class="tag col">Collocation</span><span class="q">2. Điền 对 vào câu: "抽烟 ___ 身体不好。" và "这本书 ___ 我很有帮助。"</span></div>
+      <div class="ex-item"><span class="tag trans">Biến đổi</span><span class="q">3. Đổi câu mệnh lệnh mạnh "不要迟到！" sang dạng thân mật, khẩu ngữ hơn với 别: ______________</span></div>
+      <div class="ex-item"><span class="tag ctx">Ngữ cảnh</span><span class="q">4. Bạn muốn khuyên ai đó rằng ngủ đủ giấc rất tốt cho sức khỏe — dùng 对.</span></div>
+      <div class="ex-item"><span class="tag open">Giao tiếp mở</span><span class="q">5. Viết một đoạn hội thoại ngắn: một người định làm việc không tốt cho sức khỏe, người kia khuyên dừng lại (别……了) và giải thích lý do bằng 对.</span></div>
+      <details class="answers"><summary>Xem đáp án</summary>
+        <div class="ans-list">
+          <p><b>1.</b> 别玩手机了，太晚了，快睡觉吧。</p>
+          <p><b>2.</b> 抽烟 <b>对</b> 身体不好。 这本书 <b>对</b> 我很有帮助。</p>
+          <p><b>3.</b> 别迟到了！</p>
+          <p><b>4.</b> 睡够觉对身体很好。</p>
+          <p><b>5.</b> Gợi ý mẫu: A：我想再喝一杯咖啡。 B：别喝了，喝太多咖啡对身体不好。 (đáp án mở)</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  </main>
+</div>
+
+<footer>
+  <span class="cn">温故而知新</span>
+  Ôn cũ biết mới · Tài liệu tổng hợp ngữ pháp HSK2 theo 10 bài, phân tích cú pháp – ngữ nghĩa – ngữ dụng.
+</footer>
+
+</body>
+</html>
