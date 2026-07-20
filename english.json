@@ -1,0 +1,239 @@
+{
+  "language": "English",
+  "slug": "english",
+  "description": "Build real fluency with grammar you can use, vocabulary that sticks, and listening and reading practice drawn from everyday life.",
+  "levels": [
+    {
+      "code": "Grammar",
+      "title": "Grammar",
+      "description": "The structural rules that hold sentences together, explained without the jargon.",
+      "lessons": [
+        {
+          "id": "g1",
+          "title": "Present Simple vs. Present Continuous",
+          "type": "grammar",
+          "summary": "Know when to say 'I work' and when to say 'I'm working'.",
+          "content": [
+            "The present simple describes routines, facts, and things that are generally true: 'She works at a hospital.' The present continuous describes actions happening right now, or temporary situations: 'She's working a night shift this week.'",
+            "A common mistake is using the continuous form for permanent facts. We don't say 'I am living in Vietnam' to mean a permanent home — 'I live in Vietnam' is correct. Save the continuous form for things that are clearly temporary or in progress.",
+            "Stative verbs — like know, believe, want, and love — are rarely used in the continuous form at all, because they describe states, not actions. 'I am knowing the answer' is incorrect; 'I know the answer' is right."
+          ],
+          "vocabulary": [
+            { "term": "routine", "translation": "a sequence of actions regularly followed", "notes": "noun · often paired with 'daily'" },
+            { "term": "temporary", "translation": "lasting for only a limited time", "notes": "adjective · opposite of permanent" },
+            { "term": "stative verb", "translation": "a verb that describes a state rather than an action", "notes": "grammar term" },
+            { "term": "habitual", "translation": "done regularly, as a habit", "notes": "adjective" }
+          ]
+        },
+        {
+          "id": "g2",
+          "title": "The Present Perfect",
+          "type": "grammar",
+          "summary": "Connect the past to the present with 'have/has + past participle'.",
+          "content": [
+            "The present perfect links a past action to the present moment. 'I have visited Berlin' tells us about a past experience without saying exactly when — the focus is on the fact that it happened, not the timing.",
+            "Use the present perfect with 'since' for a starting point ('since 2020') and 'for' for a duration ('for three years'). Compare this with the past simple, which needs a specific, finished time: 'I visited Berlin in 2019.'",
+            "Signal words like 'already', 'yet', 'just', and 'ever' almost always pair with the present perfect rather than the past simple in everyday conversation."
+          ],
+          "vocabulary": [
+            { "term": "experience", "translation": "knowledge or skill gained from doing something", "notes": "noun/verb" },
+            { "term": "duration", "translation": "the length of time something continues", "notes": "noun" },
+            { "term": "already", "translation": "before now, or sooner than expected", "notes": "adverb" },
+            { "term": "yet", "translation": "up until now (used in questions and negatives)", "notes": "adverb" }
+          ]
+        },
+        {
+          "id": "g3",
+          "title": "Conditionals: First and Second",
+          "type": "grammar",
+          "summary": "Talk about real possibilities and imagined situations.",
+          "content": [
+            "The first conditional describes a realistic future result: 'If it rains, we will cancel the picnic.' The condition is likely or possible.",
+            "The second conditional imagines something unreal or unlikely: 'If I won the lottery, I would travel the world.' It uses the past tense in the if-clause, even though the meaning is present or future.",
+            "A useful test: if the situation could genuinely happen tomorrow, reach for the first conditional. If you're daydreaming or discussing something contrary to fact, use the second."
+          ],
+          "vocabulary": [
+            { "term": "condition", "translation": "a requirement that must be met for something to happen", "notes": "noun" },
+            { "term": "hypothetical", "translation": "imagined rather than real", "notes": "adjective" },
+            { "term": "likely", "translation": "probable; expected to happen", "notes": "adjective" },
+            { "term": "contrary to fact", "translation": "the opposite of what is true", "notes": "phrase, used for 2nd conditional" }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Vocabulary",
+      "title": "Vocabulary",
+      "description": "High-frequency words and phrases organized by everyday themes.",
+      "lessons": [
+        {
+          "id": "v1",
+          "title": "At the Office",
+          "type": "vocabulary",
+          "summary": "Words and phrases you'll hear in almost any workplace.",
+          "content": [
+            "Workplace vocabulary tends to repeat across industries: meetings, deadlines, and colleagues appear whether you work in finance, design, or education.",
+            "Notice how many office phrases are built from phrasal verbs — 'follow up', 'circle back', 'touch base' — which don't translate word-for-word into other languages. Learn them as whole chunks."
+          ],
+          "vocabulary": [
+            { "term": "deadline", "translation": "the latest time something must be finished", "notes": "noun" },
+            { "term": "colleague", "translation": "a person you work with", "notes": "noun" },
+            { "term": "follow up", "translation": "to check on progress after an initial action", "notes": "phrasal verb" },
+            { "term": "touch base", "translation": "to make brief contact to share an update", "notes": "idiomatic phrase" },
+            { "term": "agenda", "translation": "a list of topics to discuss in a meeting", "notes": "noun" }
+          ]
+        },
+        {
+          "id": "v2",
+          "title": "Travel & Airports",
+          "type": "vocabulary",
+          "summary": "Navigate check-in, security, and boarding with confidence.",
+          "content": [
+            "Airport vocabulary is highly predictable, which makes it an efficient set to memorize before a trip: you'll hear the same 30–40 words repeatedly across almost any airport in the world.",
+            "Pay attention to verbs that pair with specific nouns — you 'board' a flight, 'check in' luggage, and 'go through' security."
+          ],
+          "vocabulary": [
+            { "term": "boarding pass", "translation": "the document that allows you onto a flight", "notes": "noun" },
+            { "term": "layover", "translation": "a stop between flights on a journey", "notes": "noun" },
+            { "term": "carry-on", "translation": "luggage small enough to bring into the cabin", "notes": "noun/adjective" },
+            { "term": "customs", "translation": "the government checkpoint for goods entering a country", "notes": "noun" },
+            { "term": "delay", "translation": "a period of time by which something is late", "notes": "noun/verb" }
+          ]
+        },
+        {
+          "id": "v3",
+          "title": "Describing Emotions",
+          "type": "vocabulary",
+          "summary": "Move beyond 'good' and 'bad' with precise emotional vocabulary.",
+          "content": [
+            "Precise emotional vocabulary makes both speaking and writing far more expressive. Instead of 'I feel bad', you might say 'I feel overwhelmed' or 'I feel disheartened' — each carries a distinct shade of meaning.",
+            "Many emotion words come in intensity pairs: 'annoyed' is milder than 'furious'; 'content' is calmer than 'ecstatic'. Learning these pairs together helps you calibrate tone."
+          ],
+          "vocabulary": [
+            { "term": "overwhelmed", "translation": "having more than you can handle", "notes": "adjective" },
+            { "term": "disheartened", "translation": "having lost confidence or hope", "notes": "adjective" },
+            { "term": "content", "translation": "in a state of peaceful satisfaction", "notes": "adjective" },
+            { "term": "ecstatic", "translation": "extremely happy", "notes": "adjective" },
+            { "term": "apprehensive", "translation": "anxious about something that may happen", "notes": "adjective" }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Listening",
+      "title": "Listening",
+      "description": "Train your ear with natural pacing, contractions, and connected speech.",
+      "lessons": [
+        {
+          "id": "l1",
+          "title": "Understanding Connected Speech",
+          "type": "listening",
+          "summary": "Why native speakers seem to 'skip' words — and how to catch them anyway.",
+          "content": [
+            "In natural speech, words blend together. 'What are you doing' often sounds like 'whatcha doin'. This isn't sloppy speech — it's a predictable pattern called connected speech, and every fluent speaker does it.",
+            "Three patterns to listen for: linking (a consonant joins the next vowel, as in 'turn it off' → 'turn-it-off'), elision (a sound disappears, as in 'next day' losing its 't'), and assimilation (one sound changes to match its neighbor, as in 'handbag' sounding like 'hambag').",
+            "Practice by shadowing: listen to a short clip, pause, and repeat it aloud immediately, matching rhythm before worrying about individual words."
+          ],
+          "vocabulary": [
+            { "term": "connected speech", "translation": "the way words link and change in natural spoken language", "notes": "phrase" },
+            { "term": "elision", "translation": "the omission of a sound when speaking", "notes": "noun" },
+            { "term": "shadowing", "translation": "a technique of repeating speech immediately after hearing it", "notes": "noun, technique" },
+            { "term": "assimilation", "translation": "a sound changing to become more like a nearby sound", "notes": "noun" }
+          ]
+        },
+        {
+          "id": "l2",
+          "title": "Following a Podcast Conversation",
+          "type": "listening",
+          "summary": "Strategies for keeping up with two speakers talking naturally.",
+          "content": [
+            "Conversational podcasts move fast because speakers interrupt, agree, and build on each other's points. Don't aim to understand every word on a first listen — aim to track who agrees with whom and why.",
+            "Listen once for gist, a second time for specific details, and a third time with a transcript if you have one. This layered approach builds both top-down and bottom-up listening skills."
+          ],
+          "vocabulary": [
+            { "term": "gist", "translation": "the general meaning of something, without the details", "notes": "noun" },
+            { "term": "tangent", "translation": "a sudden change of subject away from the main topic", "notes": "noun" },
+            { "term": "transcript", "translation": "a written version of spoken words", "notes": "noun" },
+            { "term": "banter", "translation": "playful, teasing conversation", "notes": "noun" }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Reading",
+      "title": "Reading",
+      "description": "Build reading stamina and speed with graded, real-world texts.",
+      "lessons": [
+        {
+          "id": "r1",
+          "title": "Skimming and Scanning",
+          "type": "reading",
+          "summary": "Two fast-reading techniques that save you from reading word by word.",
+          "content": [
+            "Skimming means reading quickly to get the general idea — titles, headings, first sentences of paragraphs. It's how experienced readers decide whether an article is worth reading closely.",
+            "Scanning means searching for a specific piece of information, like a date or a name, while ignoring everything else. Your eyes move in a pattern, not left-to-right line by line.",
+            "Combining both: skim an article first to build a mental map, then scan back through it to locate the exact detail you need."
+          ],
+          "vocabulary": [
+            { "term": "skim", "translation": "to read quickly for a general impression", "notes": "verb" },
+            { "term": "scan", "translation": "to look through text quickly for specific information", "notes": "verb" },
+            { "term": "mental map", "translation": "an internal sense of how information is organized", "notes": "phrase" }
+          ]
+        },
+        {
+          "id": "r2",
+          "title": "Reading News Headlines",
+          "type": "reading",
+          "summary": "Decode the compressed grammar unique to headlines.",
+          "content": [
+            "Headlines drop small words to save space: articles ('a', 'the') and forms of 'to be' often disappear. 'Prices Rise Again' really means 'Prices Are Rising Again'.",
+            "Headlines also frequently use the present tense even for past events, to create a sense of immediacy — 'Storm Hits Coast' describes something that already happened."
+          ],
+          "vocabulary": [
+            { "term": "headline", "translation": "the title of a news article", "notes": "noun" },
+            { "term": "immediacy", "translation": "the quality of feeling urgent or present", "notes": "noun" },
+            { "term": "compressed", "translation": "made shorter or more condensed", "notes": "adjective" }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "Idioms",
+      "title": "Idioms",
+      "description": "Common expressions whose meaning isn't obvious from the individual words.",
+      "lessons": [
+        {
+          "id": "i1",
+          "title": "Idioms About Time",
+          "type": "idioms",
+          "summary": "'Once in a blue moon' and other time-related expressions.",
+          "content": [
+            "'Once in a blue moon' means something happens very rarely. It has nothing to do with the moon's actual color — it refers to a rare second full moon in a calendar month.",
+            "'Beat the clock' means to finish something before a deadline, and 'in the nick of time' means at the last possible moment, just before it's too late."
+          ],
+          "vocabulary": [
+            { "term": "once in a blue moon", "translation": "very rarely", "notes": "idiom" },
+            { "term": "beat the clock", "translation": "to finish before a deadline", "notes": "idiom" },
+            { "term": "in the nick of time", "translation": "at the last possible moment", "notes": "idiom" },
+            { "term": "around the clock", "translation": "continuously, all day and night", "notes": "idiom" }
+          ]
+        },
+        {
+          "id": "i2",
+          "title": "Idioms About Effort",
+          "type": "idioms",
+          "summary": "Ways to describe hard work and giving your best.",
+          "content": [
+            "'Burn the midnight oil' means to work late into the night, from the days when oil lamps were needed to see after dark.",
+            "'Go the extra mile' means to make an additional effort beyond what's expected, and 'put your back into it' means to work with real physical or mental effort."
+          ],
+          "vocabulary": [
+            { "term": "burn the midnight oil", "translation": "to work late into the night", "notes": "idiom" },
+            { "term": "go the extra mile", "translation": "to make additional effort", "notes": "idiom" },
+            { "term": "put your back into it", "translation": "to work hard at something", "notes": "idiom" }
+          ]
+        }
+      ]
+    }
+  ]
+}

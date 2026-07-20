@@ -1,0 +1,84 @@
+/* =========================================================
+   LunaVerse — Animations
+   ========================================================= */
+
+@keyframes luna-drift {
+  0%   { transform: translate3d(0, 0, 0) rotate(0deg); }
+  50%  { transform: translate3d(2%, -3%, 0) rotate(6deg); }
+  100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+}
+
+@keyframes luna-fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes luna-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes luna-scale-in {
+  from { opacity: 0; transform: scale(0.94); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes luna-pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 rgba(124, 111, 240, 0); }
+  50%      { box-shadow: 0 0 32px rgba(124, 111, 240, 0.35); }
+}
+
+@keyframes luna-shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes luna-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes luna-orbit {
+  from { transform: rotate(0deg) translateX(var(--orbit-radius, 120px)) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(var(--orbit-radius, 120px)) rotate(-360deg); }
+}
+
+.hero-bg { animation: luna-drift 18s ease-in-out infinite; }
+
+.reveal {
+  opacity: 0;
+  animation: luna-fade-up var(--dur-slow) var(--ease-luna) forwards;
+}
+.reveal-delay-1 { animation-delay: 80ms; }
+.reveal-delay-2 { animation-delay: 160ms; }
+.reveal-delay-3 { animation-delay: 240ms; }
+.reveal-delay-4 { animation-delay: 320ms; }
+
+.is-inview {
+  animation: luna-fade-up var(--dur-slow) var(--ease-luna) forwards;
+}
+
+.skeleton {
+  background: linear-gradient(90deg, var(--bg-surface-2) 25%, var(--bg-sunken) 37%, var(--bg-surface-2) 63%);
+  background-size: 400% 100%;
+  animation: luna-shimmer 1.6s ease-in-out infinite;
+  border-radius: var(--radius-sm);
+}
+
+.spin { animation: luna-spin 900ms linear infinite; }
+
+.moon-mark.is-loading::after { animation: luna-pulse-glow 2.4s ease-in-out infinite; }
+
+/* Theme toggle icon transition */
+.theme-toggle svg {
+  transition: transform var(--dur-med) var(--ease-luna), opacity var(--dur-med) var(--ease-luna);
+}
+.theme-toggle .icon-sun { display: none; }
+.theme-toggle .icon-moon { display: block; }
+[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+
+/* Card hover lift already handled in style.css transitions */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-bg, .reveal, .is-inview, .skeleton, .spin { animation: none !important; opacity: 1 !important; }
+}

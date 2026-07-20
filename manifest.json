@@ -1,0 +1,19 @@
+{
+  "name": "LunaVerse — Learn Languages, Read Stories, Explore Life",
+  "short_name": "LunaVerse",
+  "description": "A premium personal education platform for learning English, Chinese, and German through lessons, stories, a blog, and vocabulary games.",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0C1020",
+  "theme_color": "#0C1020",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

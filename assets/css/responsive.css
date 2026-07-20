@@ -1,0 +1,101 @@
+/* =========================================================
+   LunaVerse — Responsive
+   Mobile-first overrides at larger breakpoints are avoided;
+   instead we scale DOWN from the desktop-oriented base above.
+   ========================================================= */
+
+/* ---- Tablet (<= 1024px) ---- */
+@media (max-width: 1024px) {
+  .feature-grid,
+  .story-grid,
+  .blog-grid,
+  .game-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .lesson-grid { grid-template-columns: repeat(3, 1fr); }
+
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-visual { order: -1; max-width: 360px; margin-inline: auto; }
+
+  .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+/* ---- Small tablet / large phone (<= 860px) ---- */
+@media (max-width: 860px) {
+  .main-nav ul { display: none; }
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center; justify-content: center;
+    width: 40px; height: 40px; border-radius: 50%;
+    color: var(--text-primary);
+  }
+  .nav-toggle:hover { background: var(--bg-surface-2); }
+
+  .mobile-nav-panel {
+    position: fixed;
+    inset: var(--header-h) 0 0 0;
+    background: var(--bg-canvas);
+    z-index: var(--z-header);
+    padding: var(--space-lg) var(--space-md);
+    transform: translateY(-8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all var(--dur-med) var(--ease-luna);
+    overflow-y: auto;
+  }
+  .mobile-nav-panel.is-open { opacity: 1; transform: translateY(0); pointer-events: auto; }
+  .mobile-nav-panel ul { display: flex; flex-direction: column; gap: 0; }
+  .mobile-nav-panel a {
+    display: block; padding: var(--space-md) 0;
+    font-family: var(--font-display); font-size: 1.5rem;
+    border-bottom: 1px solid var(--border-hairline);
+  }
+
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .match-board { grid-template-columns: 1fr; gap: var(--space-md); }
+}
+
+/* ---- Mobile (<= 640px) ---- */
+@media (max-width: 640px) {
+  :root { --header-h: 64px; }
+
+  .container, .container-narrow { padding-inline: var(--space-sm); }
+
+  .hero { padding: var(--space-2xl) 0 var(--space-lg); }
+  .hero h1 { font-size: var(--fs-display-lg); }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-stats { gap: var(--space-md); flex-wrap: wrap; }
+
+  .feature-grid,
+  .story-grid,
+  .blog-grid,
+  .game-grid,
+  .lesson-grid,
+  .grid-2,
+  .grid-3,
+  .grid-4 { grid-template-columns: 1fr; }
+
+  .footer-grid { grid-template-columns: 1fr; gap: var(--space-lg); }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+
+  .memory-grid { grid-template-columns: repeat(3, 1fr); }
+
+  .card { padding: var(--space-md); }
+
+  .level-tabs { padding-bottom: var(--space-xs); }
+
+  h1 { font-size: var(--fs-display-lg); }
+  h2 { font-size: 1.6rem; }
+}
+
+/* ---- Small phone (<= 380px) ---- */
+@media (max-width: 380px) {
+  .memory-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-stat strong { font-size: 1.3rem; }
+}
+
+/* ---- Print ---- */
+@media print {
+  .site-header, .site-footer, .search-overlay, .theme-toggle, .nav-toggle { display: none !important; }
+  body { background: #fff; color: #000; }
+}

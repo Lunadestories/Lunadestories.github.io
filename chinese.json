@@ -1,0 +1,236 @@
+{
+  "language": "Chinese",
+  "slug": "chinese",
+  "description": "A structured path through HSK 1–6, pairing characters with pinyin, grammar patterns, and practical vocabulary.",
+  "levels": [
+    {
+      "code": "HSK1",
+      "title": "HSK 1",
+      "description": "The first 150 core characters and the simplest sentence patterns.",
+      "lessons": [
+        {
+          "id": "h1-1",
+          "title": "Greetings & Introductions",
+          "type": "characters",
+          "summary": "你好 and the essentials of introducing yourself.",
+          "content": [
+            "你好 (nǐ hǎo) is the most common greeting in Mandarin, literally meaning 'you good'. It works in almost any situation, formal or casual.",
+            "To introduce your name, use 我叫... (wǒ jiào...), literally 'I am called...'. The question form 你叫什么名字？(nǐ jiào shénme míngzì?) asks 'what is your name?'."
+          ],
+          "vocabulary": [
+            { "term": "你好", "pinyin": "nǐ hǎo", "translation": "hello", "notes": "greeting" },
+            { "term": "谢谢", "pinyin": "xièxie", "translation": "thank you", "notes": "" },
+            { "term": "我", "pinyin": "wǒ", "translation": "I / me", "notes": "pronoun" },
+            { "term": "叫", "pinyin": "jiào", "translation": "to be called", "notes": "verb" },
+            { "term": "名字", "pinyin": "míngzi", "translation": "name", "notes": "noun" }
+          ]
+        },
+        {
+          "id": "h1-2",
+          "title": "Numbers & Counting",
+          "type": "vocabulary",
+          "summary": "0–10 and the basic measure word 个.",
+          "content": [
+            "Chinese numbers 1–10 (一 to 十) are the foundation for dates, prices, ages, and phone numbers — they appear in almost every conversation.",
+            "个 (gè) is the most common measure word, used before general nouns when counting: 三个人 (sān gè rén) means 'three people'."
+          ],
+          "vocabulary": [
+            { "term": "一", "pinyin": "yī", "translation": "one", "notes": "" },
+            { "term": "二", "pinyin": "èr", "translation": "two", "notes": "" },
+            { "term": "三", "pinyin": "sān", "translation": "three", "notes": "" },
+            { "term": "十", "pinyin": "shí", "translation": "ten", "notes": "" },
+            { "term": "个", "pinyin": "gè", "translation": "measure word (general)", "notes": "used before most countable nouns" }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HSK2",
+      "title": "HSK 2",
+      "description": "Roughly 300 characters, covering daily routines and simple opinions.",
+      "lessons": [
+        {
+          "id": "h2-1",
+          "title": "Daily Routine",
+          "type": "vocabulary",
+          "summary": "Talking about your day from 起床 to 睡觉.",
+          "content": [
+            "起床 (qǐ chuáng) means 'to get up' and 睡觉 (shuì jiào) means 'to sleep' — together they bracket the daily routine vocabulary you'll use constantly at this level.",
+            "Time words like 早上 (zǎoshang, morning), 中午 (zhōngwǔ, noon), and 晚上 (wǎnshang, evening) usually appear at the start of a sentence, before the subject."
+          ],
+          "vocabulary": [
+            { "term": "起床", "pinyin": "qǐ chuáng", "translation": "to get up", "notes": "verb phrase" },
+            { "term": "睡觉", "pinyin": "shuì jiào", "translation": "to sleep", "notes": "verb phrase" },
+            { "term": "早上", "pinyin": "zǎoshang", "translation": "morning", "notes": "time word" },
+            { "term": "晚上", "pinyin": "wǎnshang", "translation": "evening", "notes": "time word" },
+            { "term": "工作", "pinyin": "gōngzuò", "translation": "to work / job", "notes": "verb/noun" }
+          ]
+        },
+        {
+          "id": "h2-2",
+          "title": "Simple Comparisons with 比",
+          "type": "grammar",
+          "summary": "'A 比 B + adjective' — the core comparison pattern.",
+          "content": [
+            "比 (bǐ) means 'compared to'. The pattern A 比 B + adjective builds comparisons: 今天比昨天热 (jīntiān bǐ zuótiān rè) means 'today is hotter than yesterday'.",
+            "To say something is not more than another, use 没有 instead of 比: 今天没有昨天热 means 'today is not as hot as yesterday'."
+          ],
+          "vocabulary": [
+            { "term": "比", "pinyin": "bǐ", "translation": "compared to / than", "notes": "comparison particle" },
+            { "term": "热", "pinyin": "rè", "translation": "hot", "notes": "adjective" },
+            { "term": "冷", "pinyin": "lěng", "translation": "cold", "notes": "adjective" },
+            { "term": "昨天", "pinyin": "zuótiān", "translation": "yesterday", "notes": "time word" }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HSK3",
+      "title": "HSK 3",
+      "description": "Around 600 characters — enough for basic independent daily communication.",
+      "lessons": [
+        {
+          "id": "h3-1",
+          "title": "The 了 Particle",
+          "type": "grammar",
+          "summary": "Marking completed actions and changed states.",
+          "content": [
+            "了 (le) placed after a verb usually marks that an action is completed: 我吃了 (wǒ chī le) means 'I have eaten'.",
+            "了 placed at the end of a sentence can mark a change of state instead: 天黑了 (tiān hēi le) means 'it has gotten dark' — the sky wasn't dark before, and now it is."
+          ],
+          "vocabulary": [
+            { "term": "了", "pinyin": "le", "translation": "completed action / change of state particle", "notes": "grammar particle" },
+            { "term": "吃", "pinyin": "chī", "translation": "to eat", "notes": "verb" },
+            { "term": "已经", "pinyin": "yǐjīng", "translation": "already", "notes": "adverb" }
+          ]
+        },
+        {
+          "id": "h3-2",
+          "title": "Making Plans",
+          "type": "vocabulary",
+          "summary": "Vocabulary for suggesting, agreeing, and scheduling.",
+          "content": [
+            "打算 (dǎsuàn) means 'to plan to', used before a verb: 我打算去北京 means 'I plan to go to Beijing'.",
+            "The suggestion pattern 我们...吧 (wǒmen...ba) softens a proposal into a friendly suggestion: 我们走吧 means 'let's go'."
+          ],
+          "vocabulary": [
+            { "term": "打算", "pinyin": "dǎsuàn", "translation": "to plan to", "notes": "verb" },
+            { "term": "见面", "pinyin": "jiànmiàn", "translation": "to meet up", "notes": "verb" },
+            { "term": "吧", "pinyin": "ba", "translation": "suggestion / softening particle", "notes": "sentence-final particle" }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HSK4",
+      "title": "HSK 4",
+      "description": "Around 1200 characters, opening the door to fluent conversation on varied topics.",
+      "lessons": [
+        {
+          "id": "h4-1",
+          "title": "The 把 Construction",
+          "type": "grammar",
+          "summary": "Fronting the object to emphasize what happens to it.",
+          "content": [
+            "The 把 (bǎ) construction moves the object before the verb to emphasize its disposal or result: 我把门关了 (wǒ bǎ mén guān le) means 'I closed the door', emphasizing what happened to the door specifically.",
+            "把 is only used when the verb has a clear result or the object is specific and known — it cannot be used with simple, non-disposal actions."
+          ],
+          "vocabulary": [
+            { "term": "把", "pinyin": "bǎ", "translation": "object-fronting particle", "notes": "grammar particle" },
+            { "term": "关", "pinyin": "guān", "translation": "to close", "notes": "verb" },
+            { "term": "完成", "pinyin": "wánchéng", "translation": "to complete", "notes": "verb" }
+          ]
+        },
+        {
+          "id": "h4-2",
+          "title": "Expressing Opinions",
+          "type": "vocabulary",
+          "summary": "认为, 觉得, and other ways to say what you think.",
+          "content": [
+            "觉得 (juéde) is used for personal feelings or impressions: 我觉得这个电影很好看 means 'I think this movie is very good'.",
+            "认为 (rènwéi) is more formal and analytical, often used for stated opinions or arguments rather than gut feelings."
+          ],
+          "vocabulary": [
+            { "term": "觉得", "pinyin": "juéde", "translation": "to feel / think (opinion)", "notes": "verb" },
+            { "term": "认为", "pinyin": "rènwéi", "translation": "to believe / consider (formal)", "notes": "verb" },
+            { "term": "其实", "pinyin": "qíshí", "translation": "actually / in fact", "notes": "adverb" }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HSK5",
+      "title": "HSK 5",
+      "description": "Around 2500 characters — reading newspapers and watching films without subtitles.",
+      "lessons": [
+        {
+          "id": "h5-1",
+          "title": "Formal Written Connectors",
+          "type": "grammar",
+          "summary": "尽管...但是..., 由于..., and other essay-level connectors.",
+          "content": [
+            "尽管...但是... (jǐnguǎn...dànshì...) means 'although...but...' and is common in formal writing and speeches to introduce a concession.",
+            "由于 (yóuyú) means 'due to' and typically opens a sentence to explain a cause, often followed by a result introduced with 因此 (yīncǐ, therefore)."
+          ],
+          "vocabulary": [
+            { "term": "尽管", "pinyin": "jǐnguǎn", "translation": "although", "notes": "conjunction" },
+            { "term": "由于", "pinyin": "yóuyú", "translation": "due to", "notes": "conjunction" },
+            { "term": "因此", "pinyin": "yīncǐ", "translation": "therefore", "notes": "conjunction" }
+          ]
+        },
+        {
+          "id": "h5-2",
+          "title": "Reading News Summaries",
+          "type": "reading",
+          "summary": "Common structures in condensed news Chinese.",
+          "content": [
+            "News writing favors compact noun phrases over full clauses: '经济增长放缓' (economic growth slowing) packs a whole idea into four characters.",
+            "Numbers and percentages are extremely common in news texts — practicing reading 百分之 (percent) and large numbers fluently pays off quickly at this level."
+          ],
+          "vocabulary": [
+            { "term": "经济", "pinyin": "jīngjì", "translation": "economy", "notes": "noun" },
+            { "term": "增长", "pinyin": "zēngzhǎng", "translation": "to grow / growth", "notes": "verb/noun" },
+            { "term": "百分之", "pinyin": "bǎifēnzhī", "translation": "percent", "notes": "phrase" }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HSK6",
+      "title": "HSK 6",
+      "description": "5000+ characters — the top level, approaching native reading fluency.",
+      "lessons": [
+        {
+          "id": "h6-1",
+          "title": "Literary & Idiomatic Chengyu",
+          "type": "characters",
+          "summary": "Four-character idioms that carry entire stories in a few strokes.",
+          "content": [
+            "画蛇添足 (huà shé tiān zú), literally 'draw a snake and add feet', describes ruining something by adding unnecessary detail — from a fable where a man lost a drinking contest by needlessly adding feet to his drawing.",
+            "Chengyu are dense with cultural reference; understanding the story behind each one makes it far easier to remember and to use correctly in writing."
+          ],
+          "vocabulary": [
+            { "term": "画蛇添足", "pinyin": "huà shé tiān zú", "translation": "to ruin something by overdoing it", "notes": "chengyu (idiom)" },
+            { "term": "画", "pinyin": "huà", "translation": "to draw", "notes": "verb" },
+            { "term": "添", "pinyin": "tiān", "translation": "to add", "notes": "verb" }
+          ]
+        },
+        {
+          "id": "h6-2",
+          "title": "Nuanced Register: Formal vs. Colloquial",
+          "type": "grammar",
+          "summary": "Choosing between 你 and 您, and other register shifts.",
+          "content": [
+            "At HSK6, the challenge shifts from vocabulary size to precision of register. 您 (nín) versus 你 (nǐ), or 询问 (xúnwèn, formal 'to inquire') versus 问 (wèn, plain 'to ask') — the meaning is nearly identical, but the tone is not.",
+            "Reading a wide range of genres — legal notices, literary fiction, spoken interviews — builds an intuitive feel for which register fits which context."
+          ],
+          "vocabulary": [
+            { "term": "您", "pinyin": "nín", "translation": "you (formal/respectful)", "notes": "pronoun" },
+            { "term": "询问", "pinyin": "xúnwèn", "translation": "to inquire (formal)", "notes": "verb" },
+            { "term": "语境", "pinyin": "yǔjìng", "translation": "context (linguistic)", "notes": "noun" }
+          ]
+        }
+      ]
+    }
+  ]
+}

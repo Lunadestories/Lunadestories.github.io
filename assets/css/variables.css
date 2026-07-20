@@ -1,0 +1,167 @@
+/* =========================================================
+   LunaVerse — Design Tokens
+   A night-sky / moonlight system. Light mode reads as
+   "moonlight on paper", dark mode as "the sky itself".
+   ========================================================= */
+
+:root {
+  /* ---- Brand palette (fixed, theme-independent) ---- */
+  --luna-violet:      #7C6FF0;
+  --luna-violet-dim:  #5B4FD1;
+  --luna-teal:        #35D0C0;
+  --luna-gold:        #F5B95B;
+  --luna-coral:       #F0708C;
+
+  --luna-gradient-aurora: linear-gradient(120deg, var(--luna-violet) 0%, var(--luna-teal) 100%);
+  --luna-gradient-dusk:   linear-gradient(135deg, #4B3F9E 0%, #7C6FF0 45%, #35D0C0 100%);
+
+  /* ---- Type families ---- */
+  --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", serif;
+  --font-body:    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono:    "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+
+  /* ---- Type scale (fluid) ---- */
+  --fs-display-xl: clamp(2.6rem, 5vw + 1rem, 5rem);
+  --fs-display-lg: clamp(2rem, 3.4vw + 1rem, 3.4rem);
+  --fs-display-md: clamp(1.5rem, 2vw + 1rem, 2.2rem);
+  --fs-title:      clamp(1.25rem, 1.2vw + 1rem, 1.6rem);
+  --fs-body-lg:    1.15rem;
+  --fs-body:       1rem;
+  --fs-small:      0.875rem;
+  --fs-micro:      0.75rem;
+
+  --lh-tight: 1.15;
+  --lh-snug:  1.35;
+  --lh-normal: 1.6;
+  --lh-loose: 1.85;
+
+  /* ---- Spacing scale ---- */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs:  0.75rem;
+  --space-sm:  1rem;
+  --space-md:  1.5rem;
+  --space-lg:  2.25rem;
+  --space-xl:  3.5rem;
+  --space-2xl: 5.5rem;
+  --space-3xl: 8rem;
+
+  /* ---- Radii ---- */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+
+  /* ---- Motion ---- */
+  --ease-luna: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 160ms;
+  --dur-med:  360ms;
+  --dur-slow: 720ms;
+
+  /* ---- Layout ---- */
+  --container-max: 1180px;
+  --container-narrow: 760px;
+  --header-h: 76px;
+
+  /* ---- Z-index ---- */
+  --z-header: 100;
+  --z-overlay: 200;
+  --z-modal: 300;
+  --z-toast: 400;
+}
+
+/* =========================================================
+   Light theme — "Moonlight on paper"
+   Cool-white paper, ink-navy text, aurora accents used sparingly.
+   ========================================================= */
+:root,
+[data-theme="light"] {
+  --bg-canvas:      #F5F6FA;
+  --bg-surface:     #FFFFFF;
+  --bg-surface-2:   #EEF0F7;
+  --bg-sunken:      #E9EBF3;
+  --bg-inverse:     #14192B;
+
+  --text-primary:   #171B2E;
+  --text-secondary: #4B5170;
+  --text-tertiary:  #7A81A0;
+  --text-on-accent: #FFFFFF;
+  --text-inverse:   #F4F5FA;
+
+  --border-hairline: rgba(23, 27, 46, 0.09);
+  --border-strong:    rgba(23, 27, 46, 0.16);
+
+  --accent:          var(--luna-violet);
+  --accent-soft:     rgba(124, 111, 240, 0.12);
+  --accent-2:        var(--luna-teal);
+  --accent-2-soft:   rgba(53, 208, 192, 0.14);
+  --accent-gold-soft: rgba(245, 185, 91, 0.16);
+
+  --shadow-sm: 0 1px 2px rgba(23, 27, 46, 0.06), 0 1px 1px rgba(23, 27, 46, 0.04);
+  --shadow-md: 0 8px 24px rgba(23, 27, 46, 0.08), 0 2px 6px rgba(23, 27, 46, 0.04);
+  --shadow-lg: 0 24px 60px rgba(23, 27, 46, 0.14), 0 6px 16px rgba(23, 27, 46, 0.06);
+  --shadow-glow: 0 0 0 rgba(0,0,0,0);
+
+  --scrim: rgba(15, 18, 32, 0.45);
+
+  color-scheme: light;
+}
+
+/* =========================================================
+   Dark theme — "The sky itself"
+   Deep indigo-navy, soft starlight text, aurora glows.
+   ========================================================= */
+[data-theme="dark"] {
+  --bg-canvas:      #0C1020;
+  --bg-surface:     #141A30;
+  --bg-surface-2:   #1B2340;
+  --bg-sunken:      #090C18;
+  --bg-inverse:     #F5F6FA;
+
+  --text-primary:   #EDEFF9;
+  --text-secondary: #AEB4D6;
+  --text-tertiary:  #767CA3;
+  --text-on-accent: #0C1020;
+  --text-inverse:   #14192B;
+
+  --border-hairline: rgba(237, 239, 249, 0.08);
+  --border-strong:    rgba(237, 239, 249, 0.16);
+
+  --accent:          #9C90FF;
+  --accent-soft:     rgba(156, 144, 255, 0.16);
+  --accent-2:        #4CE0D0;
+  --accent-2-soft:   rgba(76, 224, 208, 0.14);
+  --accent-gold-soft: rgba(245, 185, 91, 0.14);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 28px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 30px 70px rgba(0, 0, 0, 0.55);
+  --shadow-glow: 0 0 40px rgba(124, 111, 240, 0.25);
+
+  --scrim: rgba(3, 4, 10, 0.6);
+
+  color-scheme: dark;
+}
+
+/* Respect OS preference before JS runs (avoids flash) */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg-canvas:      #0C1020;
+    --bg-surface:     #141A30;
+    --bg-surface-2:   #1B2340;
+    --bg-sunken:      #090C18;
+    --bg-inverse:     #F5F6FA;
+    --text-primary:   #EDEFF9;
+    --text-secondary: #AEB4D6;
+    --text-tertiary:  #767CA3;
+    --border-hairline: rgba(237, 239, 249, 0.08);
+    --border-strong:    rgba(237, 239, 249, 0.16);
+    --accent:          #9C90FF;
+    --accent-soft:     rgba(156, 144, 255, 0.16);
+    --accent-2:        #4CE0D0;
+    --accent-2-soft:   rgba(76, 224, 208, 0.14);
+    --shadow-md: 0 8px 28px rgba(0, 0, 0, 0.45);
+    --shadow-lg: 0 30px 70px rgba(0, 0, 0, 0.55);
+    color-scheme: dark;
+  }
+}

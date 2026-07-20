@@ -1,0 +1,92 @@
+[
+  {
+    "slug": "why-i-started-lunaverse",
+    "title": "Why I Started LunaVerse",
+    "category": "Journey",
+    "date": "2026-01-12",
+    "tags": ["origin", "language-learning", "personal"],
+    "excerpt": "Three languages, one notebook, and the slow realization that learning sticks best when it feels like exploring, not studying.",
+    "wordCount": 480,
+    "body": [
+      "I didn't set out to build a platform. I set out to stop losing my notes. Every time I picked up German again after a long break, I'd find scattered notebooks, half-finished flashcard apps, and vocabulary lists I'd already written three times before.",
+      "LunaVerse started as a single HTML page listing German verbs I kept forgetting. Then I added Chinese, because I was relearning characters I'd known as a child and didn't want to lose them a second time. English came last, ironically, as a way to organize idioms I used constantly but had never actually taught anyone.",
+      "The name comes from a habit, not a metaphor I planned in advance: I do most of my studying at night, when the apartment is quiet and the moon is the only other thing awake. It felt right to name the project after that hour.",
+      "This blog is where I'll write about what's working, what isn't, and the small discoveries that don't fit neatly into a vocabulary list — the kind of thing you only notice when you've been stuck on a grammar point for the eleventh time."
+    ]
+  },
+  {
+    "slug": "the-myth-of-fluency-overnight",
+    "title": "The Myth of Fluency Overnight",
+    "category": "Language Learning",
+    "date": "2026-02-03",
+    "tags": ["mindset", "fluency", "motivation"],
+    "excerpt": "No app, method, or '30-day challenge' changes the basic math of how long language actually takes to settle into your brain.",
+    "wordCount": 510,
+    "body": [
+      "Every few months, a new app promises fluency in thirty days. I understand the appeal — I've clicked those ads too, late at night, tired of feeling stuck. But the promise itself misunderstands how language actually settles into a brain.",
+      "Vocabulary can be memorized quickly. Grammar rules can be explained in an afternoon. But fluency isn't the sum of facts you know — it's the speed at which you can retrieve and combine them without translating in your head first. That speed comes from repetition spread out over time, not concentrated into a month.",
+      "This is actually good news, not bad news. It means you don't need to find some secret method other people are hiding from you. You need consistency you can sustain for a year, not intensity you can sustain for a month.",
+      "On LunaVerse, I've tried to design lessons around this reality: small, repeatable units you can return to without dread, rather than long lessons that feel like a mountain each time you open them."
+    ]
+  },
+  {
+    "slug": "what-chinese-characters-taught-me-about-patience",
+    "title": "What Chinese Characters Taught Me About Patience",
+    "category": "Chinese",
+    "date": "2026-02-21",
+    "tags": ["chinese", "characters", "patience"],
+    "excerpt": "Learning to write 爱 for the hundredth time taught me more about patience than any productivity book ever has.",
+    "wordCount": 460,
+    "body": [
+      "There's a particular kind of humility in writing the same character for the hundredth time and still getting the stroke order wrong. I remember sitting with 爱 (love) — thirteen strokes, each one supposedly meaningful — and feeling like the character was actively resisting me.",
+      "What changed wasn't a better method. It was accepting that characters aren't memorized once; they're worn into memory slowly, the way a path gets worn into grass. Nobody notices the grass changing day to day. They only notice, months later, that a path now exists where there wasn't one before.",
+      "I stopped counting how many times I'd written a character 'correctly' and started simply writing it again, without judgment, whenever it came up. Oddly, this made the characters stick faster than any focused drilling session had.",
+      "If you're deep in HSK3 or HSK4 right now, frustrated that a character you've 'already learned' keeps slipping away — it's not slipping. It's just still becoming a path."
+    ]
+  },
+  {
+    "slug": "german-word-order-finally-clicked",
+    "title": "The Day German Word Order Finally Clicked",
+    "category": "German",
+    "date": "2026-03-08",
+    "tags": ["german", "grammar", "breakthroughs"],
+    "excerpt": "Verb-second, verb-final, and the strange relief of finally seeing the pattern instead of memorizing exceptions.",
+    "wordCount": 440,
+    "body": [
+      "For almost a year, German word order felt like a list of exceptions I hadn't finished memorizing yet. Main clauses put the verb second. Subordinate clauses push it to the end. Questions flip it to the front. It felt arbitrary, like rules invented to slow me down.",
+      "Then, on an ordinary Tuesday, reading an article about absolutely nothing important, I noticed I wasn't translating anymore. I was just reading — and the verb positions weren't rules I was applying, they were simply where I expected the verb to be, the way English speakers don't think about subject-verb-object order because it's just how sentences sound right.",
+      "I still can't fully explain what changed. I think it was simply enough exposure, over enough time, that my brain built its own internal rule instead of borrowing mine from a textbook. The textbook rule got me started; repeated reading is what made it automatic.",
+      "If you're mid-frustration with a grammar point right now, this is the only real encouragement I have: the rule you're memorizing today is scaffolding. At some point — not predictable, not on schedule — the scaffolding comes down and the pattern is just there."
+    ]
+  },
+  {
+    "slug": "building-lunaverse-in-public",
+    "title": "Building LunaVerse in Public: Lessons from the First Redesign",
+    "category": "Behind the Scenes",
+    "date": "2026-04-02",
+    "tags": ["design", "behind-the-scenes", "product"],
+    "excerpt": "What changed between the first cluttered version of this site and the calmer one you're reading now.",
+    "wordCount": 500,
+    "body": [
+      "The first version of LunaVerse tried to do everything at once: bright colors for every language, badges for every achievement, a homepage that looked more like a dashboard than a place to sit and read.",
+      "It technically worked. But I noticed I was opening it less, not more — which for a tool meant to build a daily habit was a serious problem. Busy design doesn't just look worse; it raises the activation energy required to start a five-minute study session.",
+      "The redesign leaned into restraint on purpose: quieter colors most of the time, with the aurora gradient reserved for moments that matter — a completed lesson, a correct quiz streak, the quote of the day. Whitespace stopped feeling like wasted space and started feeling like the thing that made reading comfortable again.",
+      "The biggest lesson wasn't really about design software. It was that a study tool competes with every other five-minute distraction on your phone. If opening it feels like effort, it loses. If it feels like a calm room you already know your way around, it wins."
+    ]
+  },
+  {
+    "slug": "quotes-i-return-to",
+    "title": "Five Quotes I Keep Returning To",
+    "category": "Reflection",
+    "date": "2026-04-27",
+    "tags": ["quotes", "reflection", "motivation"],
+    "excerpt": "A short, honest list of the lines that have kept me showing up on the hard study days.",
+    "wordCount": 400,
+    "body": [
+      "I keep a small file of quotes that have nothing in common except that they showed up exactly when I needed them. I'm sharing five here, not as inspiration posters, but as an honest record of what's actually helped.",
+      "The first is from a language teacher I never met in person, only online: 'You don't rise to the level of your goals, you fall to the level of your systems.' It's not originally about language learning, but it fixed the way I planned my weeks.",
+      "The second is something my grandmother used to say about needlework, which turned out to apply just as well to grammar: 'Uneven stitches still hold the fabric together.' Imperfect practice still counts.",
+      "I won't list all five here — some of them are on the homepage, rotating as the quote of the day. But if one of them lands on your screen on a hard day, I hope it does for you what it did for me."
+    ]
+  }
+]

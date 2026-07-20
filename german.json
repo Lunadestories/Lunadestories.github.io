@@ -1,0 +1,169 @@
+{
+  "language": "German",
+  "slug": "german",
+  "description": "A CEFR-aligned path from A1 to B1 — grammar, vocabulary, exercises, and reading for German that actually sticks.",
+  "levels": [
+    {
+      "code": "A1",
+      "title": "A1 — Beginner",
+      "description": "The building blocks: articles, present tense, and everyday vocabulary.",
+      "lessons": [
+        {
+          "id": "a1-1",
+          "title": "Der, Die, Das — Gendered Articles",
+          "type": "grammar",
+          "summary": "Why every German noun has a gender, and how to guess it.",
+          "content": [
+            "Every German noun carries a grammatical gender: der (masculine), die (feminine), or das (neuter). This isn't about biological gender — der Löffel (the spoon) is masculine for no logical reason.",
+            "Some endings are reliable hints: nouns ending in -ung, -heit, -keit, or -schaft are almost always feminine (die Zeitung, die Freiheit). Nouns ending in -chen or -lein are always neuter, regardless of what they refer to (das Mädchen — 'the girl' — is neuter).",
+            "The best strategy is to learn every noun together with its article from day one, rather than memorizing nouns alone and guessing genders later."
+          ],
+          "vocabulary": [
+            { "term": "der Tisch", "translation": "the table (masc.)", "notes": "noun" },
+            { "term": "die Lampe", "translation": "the lamp (fem.)", "notes": "noun" },
+            { "term": "das Buch", "translation": "the book (neut.)", "notes": "noun" },
+            { "term": "die Zeitung", "translation": "the newspaper (fem.)", "notes": "-ung ending → feminine" }
+          ]
+        },
+        {
+          "id": "a1-2",
+          "title": "Present Tense of Sein & Haben",
+          "type": "grammar",
+          "summary": "The two most irregular — and most essential — verbs in German.",
+          "content": [
+            "Sein ('to be') and haben ('to have') are irregular but appear constantly, so they're worth memorizing before any other verb: ich bin, du bist, er/sie/es ist, wir sind, ihr seid, sie/Sie sind.",
+            "Haben conjugates as: ich habe, du hast, er/sie/es hat, wir haben, ihr habt, sie/Sie haben. Both verbs also serve as helping verbs for other tenses later on, so fluency here pays off repeatedly."
+          ],
+          "vocabulary": [
+            { "term": "sein", "translation": "to be", "notes": "irregular verb" },
+            { "term": "haben", "translation": "to have", "notes": "irregular verb" },
+            { "term": "ich bin", "translation": "I am", "notes": "conjugation" },
+            { "term": "wir haben", "translation": "we have", "notes": "conjugation" }
+          ]
+        },
+        {
+          "id": "a1-3",
+          "title": "Everyday Greetings",
+          "type": "vocabulary",
+          "summary": "Regional greetings from Guten Tag to Servus.",
+          "content": [
+            "Guten Tag is the neutral, safe greeting anywhere in the German-speaking world. Moin is common in the north, Grüß Gott in Bavaria and Austria, and Servus in Austria and Bavaria as both hello and goodbye.",
+            "Wie geht's? ('How's it going?') is casual; the formal equivalent is Wie geht es Ihnen?, using the polite Sie form."
+          ],
+          "vocabulary": [
+            { "term": "Guten Tag", "translation": "good day / hello", "notes": "neutral greeting" },
+            { "term": "Wie geht's?", "translation": "how's it going?", "notes": "casual" },
+            { "term": "Auf Wiedersehen", "translation": "goodbye (formal)", "notes": "" },
+            { "term": "Tschüss", "translation": "bye (casual)", "notes": "" }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "A2",
+      "title": "A2 — Elementary",
+      "description": "Past tense, modal verbs, and vocabulary for daily independence.",
+      "lessons": [
+        {
+          "id": "a2-1",
+          "title": "The Perfekt Tense",
+          "type": "grammar",
+          "summary": "Talking about the past with haben/sein + past participle.",
+          "content": [
+            "Most spoken-German past events use the Perfekt tense: a form of haben or sein plus a past participle placed at the end of the sentence — Ich habe einen Film gesehen ('I watched a movie').",
+            "Verbs of motion or change of state (gehen, fahren, aufstehen) use sein instead of haben: Ich bin nach Berlin gefahren ('I traveled to Berlin')."
+          ],
+          "vocabulary": [
+            { "term": "gesehen", "translation": "seen (participle of sehen)", "notes": "past participle" },
+            { "term": "gefahren", "translation": "traveled/driven (participle of fahren)", "notes": "past participle, uses sein" },
+            { "term": "gemacht", "translation": "done/made (participle of machen)", "notes": "past participle" }
+          ]
+        },
+        {
+          "id": "a2-2",
+          "title": "Modal Verbs: Können, Müssen, Wollen",
+          "type": "grammar",
+          "summary": "Ability, obligation, and desire, all with a shifted word order.",
+          "content": [
+            "Modal verbs push the main verb to the infinitive at the end of the sentence: Ich kann gut kochen ('I can cook well'), Ich muss jetzt gehen ('I must go now').",
+            "Wollen expresses desire or intention: Ich will Deutsch lernen ('I want to learn German'). Note that wollen is stronger and more direct than möchten, which is the polite form of 'would like'."
+          ],
+          "vocabulary": [
+            { "term": "können", "translation": "can / to be able to", "notes": "modal verb" },
+            { "term": "müssen", "translation": "must / to have to", "notes": "modal verb" },
+            { "term": "wollen", "translation": "to want", "notes": "modal verb" },
+            { "term": "möchten", "translation": "would like (polite)", "notes": "modal verb" }
+          ]
+        },
+        {
+          "id": "a2-3",
+          "title": "Shopping & Prices",
+          "type": "vocabulary",
+          "summary": "Numbers, currency, and asking how much something costs.",
+          "content": [
+            "Was kostet das? ('What does that cost?') is the essential shopping phrase. Prices in German are read with 'Euro' before the cents: 4,50 € is 'vier Euro fünfzig'.",
+            "Note that German uses a comma as the decimal separator and a period for thousands — the reverse of English convention."
+          ],
+          "vocabulary": [
+            { "term": "kosten", "translation": "to cost", "notes": "verb" },
+            { "term": "billig", "translation": "cheap", "notes": "adjective" },
+            { "term": "teuer", "translation": "expensive", "notes": "adjective" },
+            { "term": "das Angebot", "translation": "the offer/deal", "notes": "noun" }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "B1",
+      "title": "B1 — Intermediate",
+      "description": "Subordinate clauses, Konjunktiv II, and reading longer authentic texts.",
+      "lessons": [
+        {
+          "id": "b1-1",
+          "title": "Subordinate Clauses with Weil & Dass",
+          "type": "grammar",
+          "summary": "Sending the verb to the end — the hallmark of German subordinate clauses.",
+          "content": [
+            "In a subordinate clause introduced by weil ('because') or dass ('that'), the conjugated verb moves to the very end: Ich bleibe zu Hause, weil ich krank bin ('I'm staying home because I am sick').",
+            "This word order applies to a whole family of subordinating conjunctions — obwohl (although), wenn (if/when), and als (when, for a single past event) all trigger the same verb-final structure."
+          ],
+          "vocabulary": [
+            { "term": "weil", "translation": "because", "notes": "subordinating conjunction" },
+            { "term": "dass", "translation": "that", "notes": "subordinating conjunction" },
+            { "term": "obwohl", "translation": "although", "notes": "subordinating conjunction" }
+          ]
+        },
+        {
+          "id": "b1-2",
+          "title": "Konjunktiv II — Polite Requests & Hypotheticals",
+          "type": "grammar",
+          "summary": "Würde, hätte, wäre — softening statements and imagining alternatives.",
+          "content": [
+            "Konjunktiv II expresses politeness, wishes, and hypothetical situations: Ich hätte gern einen Kaffee ('I would like a coffee') is far softer than the blunt Ich will einen Kaffee.",
+            "Wäre (would be) and hätte (would have) are the two irregular forms worth memorizing outright; for most other verbs, würde + infinitive covers the same function: Ich würde das nicht machen ('I wouldn't do that')."
+          ],
+          "vocabulary": [
+            { "term": "würde", "translation": "would (auxiliary)", "notes": "Konjunktiv II" },
+            { "term": "hätte", "translation": "would have", "notes": "Konjunktiv II of haben" },
+            { "term": "wäre", "translation": "would be", "notes": "Konjunktiv II of sein" }
+          ]
+        },
+        {
+          "id": "b1-3",
+          "title": "Reading a Short Newspaper Article",
+          "type": "reading",
+          "summary": "Strategies for tackling authentic German news text.",
+          "content": [
+            "German newspaper sentences are often long, with the verb pushed toward the end and multiple clauses nested together. Read for the main clause first — find the conjugated verb in second position — before untangling the subordinate clauses around it.",
+            "Compound nouns like der Bundesgerichtshof (the Federal Court of Justice) look intimidating but are simply smaller words glued together; breaking them apart usually reveals a meaning you already know."
+          ],
+          "vocabulary": [
+            { "term": "die Nachricht", "translation": "the news / message", "notes": "noun" },
+            { "term": "das Ereignis", "translation": "the event", "notes": "noun" },
+            { "term": "zusammengesetzt", "translation": "compound / put together", "notes": "adjective" }
+          ]
+        }
+      ]
+    }
+  ]
+}
